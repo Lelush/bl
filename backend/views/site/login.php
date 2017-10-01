@@ -1,35 +1,65 @@
 <?php
+use backend\widgets\AdminForm;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
+/* @var $form AdminForm */
 /* @var $model \common\models\LoginForm */
+/* @var $login string|null */
 
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-
-$this->title = 'Login';
+$this->title = 'Вход';
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerJs(<<<JS
+
+    "use strict";
+
+    CanvasBG.init({
+        Loc: {
+            x: window.innerWidth / 2,
+            y: window.innerHeight / 3.3
+        }
+    });
+
+JS
+);
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+<!-- Start: Main -->
+<div id="main" class="animated fadeIn">
 
-    <p>Please fill out the following fields to login:</p>
+    <!-- Start: Content-Wrapper -->
+    <section id="content_wrapper">
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
+        <!-- begin canvas animation bg -->
+        <div id="canvas-wrapper">
+            <canvas id="demo-canvas"></canvas>
         </div>
-    </div>
+
+        <!-- Begin: Content -->
+        <section id="content">
+
+            <div class="admin-form theme-info mw500" id="login1">
+                <div class="panel mt30 mb25">
+
+                    <?php $form = AdminForm::begin(['id' => 'login-form']); ?>
+                    <div class="panel-body bg-light p25 pb15">
+                        <?= $form->field($model, 'email')->textInput(['value'=>$login])->icon(['name'=>'fa fa-envelope']);?>
+                        <?= $form->field($model, 'password')->passwordInput(['value'=>$login?'123456':null])->icon(['name'=>'fa fa-lock']);?>
+                    </div>
+
+                    <div class="panel-footer clearfix">
+                        <?= Html::submitButton('Вход', ['class' => 'button btn-primary mr10 pull-right', 'name' => 'login-button']) ?>
+                        <?= $form->field($model, 'rememberMe')->switchBoxRight(['switchOptions'=>['class'=>'switch-primary mt10']])?>
+                    </div>
+
+                    <?php AdminForm::end(); ?>
+                </div>
+            </div>
+
+        </section>
+        <!-- End: Content -->
+
+    </section>
+    <!-- End: Content-Wrapper -->
+
 </div>
+<!-- End: Main -->

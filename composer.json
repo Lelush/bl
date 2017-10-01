@@ -17,7 +17,17 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
-        "yiisoft/yii2-swiftmailer": "~2.0.0"
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "videlalvaro/php-amqplib": "2.5.*",
+        "toriphes/yii2-console-runner": "*",
+        "yiisoft/yii2-jui": "^2.0",
+        "miloschuman/yii2-highcharts-widget": "dev-master",
+        "symfony/dom-crawler": "2.8.*",
+        "symfony/css-selector": "2.8.*",
+        "bower-asset/blueimp-file-upload": "*",
+        "omnilight/yii2-sypexgeo": "*",
+        "wbraganca/yii2-fancytree-widget": "*",
+        "kartik-v/yii2-export": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -8,11 +8,27 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'Best Location',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'ru-Ru',
+                ],
+            ],
+        ],
+        'view' => [
+            'class' => 'backend\components\View',
+        ],
+        'formatter' => [
+            'dateFormat' => 'php:Y-m-d',
+            'datetimeFormat' => 'php:d.m.Y H:i'
+        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
@@ -33,11 +49,42 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
-            'enablePrettyUrl' => true,
+            'class' => 'yii\web\UrlManager',
+            // Disable index.php
             'showScriptName' => false,
-            'rules' => [
-            ],
+            // Disable r= routes
+            'enablePrettyUrl' => true,
+            'rules' => array(
+                'users/create/<type:[-\w]+>'                => 'users/create',
+                'images/upload/<type:[-\w]+>'               => 'images/upload',
+                '<controller:\w+>'                          => '<controller>/index',
+                '<controller:\w+>/<id:\d+>'                 => '<controller>/view',
+                '<controller:\w+>/<action:[-\w]+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:[-\w]+>'          => '<controller>/<action>',
+
+            ),
         ],
+        'user' => [
+            'class' => 'common\components\User',
+            'identityClass' => 'common\models\User',
+            'enableAutoLogin' => true,
+        ],
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'sourcePath' => '@upload',
+                    'css' => ['skin/default_skin/css/theme.css'],
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js'=>[]
+                ],
+            ],
+            'class' => 'yii\web\AssetManager',
+            'linkAssets' => !YII_DEBUG,
+            'forceCopy' => YII_DEBUG
+        ],
+
+
     ],
     'params' => $params,
 
