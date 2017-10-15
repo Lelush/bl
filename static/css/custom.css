@@ -21,6 +21,16 @@
     transition: .3s;
 }
 
+.wikiSubHeader {
+    font-weight: 600;
+    font-size: 21px;
+    font-family: IntroBold;
+}
+
+div#terms_box_content {
+    color: white;
+}
+
 li.top-people, li.top-people:hover, li.top-people:hover a, li.top-people a:active, li.top-people a:focus {
     background: #e98404;
     background: -webkit-gradient(linear, left top, left bottom, from(#e98404), to(#ffc93e));
@@ -186,14 +196,22 @@ a.page-leftbar__login-wrap:hover {
     width: 100%;
 }
 
+div.registration h1.reg-heading, div.registration span.reg-text {
+    padding-left: 0;
+}
+
+
 h1.reg-heading {
     color: white;
     letter-spacing: 1px;
+    font-family: IntroBold;
+    padding-left: 20px;
 }
 span.reg-text {
     color: white;
     display: block;
     padding: 5px 0;
+    padding-left: 20px;
 }
 input.reg-input {
     display: block;
@@ -248,6 +266,7 @@ div.registration.second {
     background-color: #39404e;
 }
 .reg-button.next {
+    width:100%;
     background: #23D6FE;
     background: linear-gradient(45deg, #54f 0%, #23D6FE 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe2387', endColorstr='#ff7618',GradientType=1 );
@@ -287,10 +306,6 @@ div.slide-text span, .slide-content span {
     position: absolute;
     font-size: 32px;
     left: 65px;
-}
-
-div.slide.second {
-    top: -200px;
 }
 
 div.slide.second .slide-text {
@@ -410,6 +425,251 @@ div.image-block img {
     width: 100%;
 }
 
+div.updates-tabs {
+    border-bottom: 2px solid #333333;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+div.updates-tabs span {
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding-bottom: 3px;
+    margin: 5px 15px;
+}
+
+div.updates-tabs span:first-child {
+    margin-left: 0;
+}
+
+div.updates-tabs span:hover, div.updates-tabs span.active {
+    color: #fff;
+    border-bottom: 1px solid white;
+}
+
+div.update-form {
+    margin-top: 50px;
+}
+
+.updater-text textarea {
+    width: 100%;
+    background-color: #2c323c;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    min-height: 60px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.updater-text textarea:focus {
+    border: none;
+    outline: none;
+}
+
+.updater-avatar img {
+    background-color: #ccc;
+    border-radius: 15px;
+    min-height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    display: block;
+}
+
+.actions {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.actions img {
+    height: 15px;
+    display: inline-block;
+    margin: 0 5px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.actions img:hover {
+    opacity: 1;
+}
+
+div.image-block-updates {
+    background-image: url(http://bl.2dsd.ru/new/assets/img/car.png);
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 300px;
+}
+
+div.image-block-updates .image-text {
+    font-family: IntroBold;
+    color: white;
+    font-size: 17px;
+}
+
+div.update-buttons-text span {
+    display: block;
+    margin: 10px 0;
+    font-size: 12px;
+    color: white;
+    padding: 10px 0;
+    font-family: IntroBold;
+    height: 40px;
+}
+
+.pt0 {
+    padding-top: 0!important;
+}
+
+div.update-buttons {
+
+}
+
+div.update-buttons .update-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #e4f7ff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    color: #3467bb;
+    font-family: IntroBold;
+    border: none;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+div.update-textarea {
+    min-width: 280px;
+    max-width: 500px;
+    height: auto;
+    position: relative;
+}
+
+div.update-buttons .update-button:hover {
+    background-color: #f8337c;
+    color: white;
+}
+div.myPage-avatar, div.myPage-avatar img {
+    max-width: 235px;
+    max-height: 480px;
+}
+
+div.myPage-avatar img {
+    width: 100%;
+}
+
+div.myPage-block {
+    background: #262a30;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+div.myPage-info {
+
+}
+
+div.myPage-info__info {
+    margin-top: 20px;
+}
+
+div.myPage-info .info-heading, .social-heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: IntroBold;
+    font-size: 12px;
+    color: #606468;
+}
+
+.social-heading {
+    line-height: 34px;
+}
+
+div.myPage-views {
+    background-image: url(http://bl.2dsd.ru/new/assets/img/views.png);
+    position: absolute;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    background-position: left center;
+    color: #a0a0a0;
+    font-family: IntroBold;
+    right: 10px;
+    top: 10px;
+}
+
+a.myPage-stat {
+    background-image: url(http://bl.2dsd.ru/new/assets/img/shape.png);
+    padding-left: 30px;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-family: IntroBold;
+    transition: all 0.3s;
+    line-height: 30px;
+}
+
+.myPage-settings {
+    line-height: 25px;
+}
+
+a.myPage-stat:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+a.social-link:hover {
+    text-decoration: none;
+}
+img.social-img{
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+img.social-img:hover{
+    opacity: 0.8;
+}
+img.vk{
+    background-image: linear-gradient(180deg, #7b9fc1 0%, #45668e 100%);
+}
+img.fb{
+    background-image: linear-gradient(180deg, #3b5998 0%, #5472b1 100%);
+}
+img.tw{
+    background-image: linear-gradient(180deg, #00aced 0%, #0cb3f2 100%);
+}
+
+div.myPage-stat {
+    padding: 10px 15px;
+}
+
+.myPage-stat__text {
+    border-right: 1px solid #515459;
+}
+
+div.myPage-info span {
+    display: block;
+    color: white;
+}
+
+.myPage-info__name {
+    font-size: 21px;
+    color: white;
+    display: block;
+}
+
+div.myPage-social {
+
+}
+
 
 
 
@@ -419,12 +679,28 @@ div.image-block img {
 /********* RESPONSIVE ************/
 /*********************************/
 @media (min-width: 320px) and (max-width: 768px) {
+    div.update-form {
+        margin-top: 0px;
+    }
+
+    div.image-block-updates {
+        margin-top: 25px;
+    }
+
+    div.updates-tabs span {
+        margin: 5px;
+    }
+
     .col-xs-12.slide {
         padding: 0;
     }
 
     h1.reg-heading {
         margin-top: 5px;
+        padding-left: 0;
+    }
+    span.reg-text,.updates-tabs  {
+        padding-left: 0;
     }
 
     div.registration {

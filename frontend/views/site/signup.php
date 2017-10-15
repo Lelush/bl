@@ -11,6 +11,7 @@ $this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<div class="admin-panels">
 <div class="col-md-6 col-xs-12 image-block hidden-md hidden-lg">
     <img src="<?=Yii::getAlias('@static')?>/img/1_step.png"/>
 </div>
@@ -87,4 +88,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="col-md-6 col-xs-12 image-block hidden-xs">
     <img src="<?=Yii::getAlias('@static')?>/img/1_step.png" style="width: 100%"/>
+</div>
 </div>

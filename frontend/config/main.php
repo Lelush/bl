@@ -78,6 +78,7 @@ return [
             // Disable r= routes
             'enablePrettyUrl' => true,
             'rules' => array(
+                '/my-page'                                   => 'users/my-page',
                 '<controller:\w+>'                          => '<controller>/index',
                 '<controller:\w+>/<id:\d+>'                 => '<controller>/view',
                 'images/upload/<type:[-\w]+>'               => 'images/upload',

@@ -247,7 +247,7 @@ AppAsset::register($this);
                     </a>
                 </div>
                 <li>
-                    <a href="#">
+                    <a href="mypage.html">
               <span>
                 <img src="http://best-locations.2dsd.ru/img/left-nav/crown.svg" alt="">
               </span>
@@ -326,7 +326,7 @@ AppAsset::register($this);
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="http://bl.2dsd.ru/new/updates.html">
               <span>
                 <img src="http://best-locations.2dsd.ru/img/left-nav/chat.svg" alt="">
               </span>
@@ -349,14 +349,14 @@ AppAsset::register($this);
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="http://bl.2dsd.ru/new/terms.html">
                         <span><img src="http://best-locations.2dsd.ru/img/left-nav/docs.svg" alt=""></span>
                         <span class="sidebar-title">Правила</span>
                     </a>
                 </li>
                 <li class="bl_button">
-                    <a href="<?= \yii\helpers\Url::to(['site/signup'])?>">
-                        <span class="hidden-md hidden-lg hidden-xs"><img class="hidden-md hidden-lg" src="<?=Yii::getAlias('@static')?>/img/login-button-mobile.svg"></span>
+                    <a href="registration.html">
+                        <span class="hidden-md hidden-lg hidden-xs"><img class="hidden-md hidden-lg" src="assets/img/login-button-mobile.svg"></span>
                         <span class="sidebar-title hidden-sm">Зарегистрироваться</span>
                     </a>
                 </li>
@@ -400,9 +400,7 @@ AppAsset::register($this);
         <!-- Begin: Content -->
         <section id="content">
 
-            <div class="admin-panels">
-                <?=$content;?>
-            </div>
+            <?=$content;?>
 
         </section>
         <!-- End: Content -->

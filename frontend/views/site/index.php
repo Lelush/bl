@@ -4,54 +4,56 @@
 
 $this->title = 'BL';
 ?>
-<div class="row">
+<div class="admin-panels">
 
-    <div class="col-md-12 col-xs-12 slide first">
-        <div class="slide-text">
-            <span>Социальная сеть</span>
-            <span>нового поколения</span>
+    <div class="row">
+
+        <div class="col-md-12 col-xs-12 slide first">
+            <div class="slide-text">
+                <span>Социальная сеть</span>
+                <span>нового поколения</span>
+            </div>
+            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-1.jpg"/>
         </div>
-        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-1.jpg"/>
-    </div>
 
-    <div class="col-md-12 col-xs-12 slide second">
-        <div class="slide-text">
+        <div class="col-md-12 col-xs-12 slide second">
+            <div class="slide-text">
                 <span>
                   BEST LIFE
                 </span>
-            <span>
+                <span>
                   Получай от жизни все
                 </span>
-        </div>
-        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-2.jpg"/>
-        <div class="slide-content">
+            </div>
+            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-2.jpg"/>
+            <div class="slide-content">
 				<span class="heading">
 					Выбери кто ты
 				</span>
-            <span class="text">
+                <span class="text">
 					Создай свой образ и открой его особые возможности
 				</span>
-            <a class="bl_button" href="#">Выбрать</a>
+                <a class="bl_button" href="#">Выбрать</a>
+            </div>
         </div>
-    </div>
 
-    <div class="col-md-12 col-xs-12 slide third">
-        <div class="slide-text">
+        <div class="col-md-12 col-xs-12 slide third">
+            <div class="slide-text">
                 <span>
                   BEST LOCATIONS
                 </span>
-        </div>
-        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-3.jpg"/>
+            </div>
+            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-3.jpg"/>
 
-        <div class="video-mobile hidden-md hidden-lg">
-            <video id="video1" src="<?=Yii::getAlias('@static')?>/video.mov"></video>
-            <button id="play-Pause"><i id="pP-icon" class="fa fa-play" aria-hidden="true"></i></button>
-        </div>
-        <div class="slide-content">
+            <div class="video-mobile hidden-md hidden-lg">
+                <video id="video1" src="<?=Yii::getAlias('@static')?>/video.mov"></video>
+                <button id="play-Pause"><i id="pP-icon" class="fa fa-play" aria-hidden="true"></i></button>
+            </div>
+            <div class="slide-content">
                 <span class="heading">
 					Лучшие места
                 </span>
-            <span class="text">
+                <span class="text">
 					Поможет определиться с непростым
 					выбором, дав доступ только к лучшим
 					местам отдыха, развлечений, шопинга,
@@ -59,34 +61,37 @@ $this->title = 'BL';
 					становиться популярными, экономить
 					или зарабатывать
 				</span>
+            </div>
         </div>
-    </div>
 
-    <div class="col-md-12 col-xs-12 slide four">
-        <div class="slide-text">
+        <div class="col-md-12 col-xs-12 slide four">
+            <div class="slide-text">
                 <span>
                   Гид по городу
                 </span>
-            <span>
+                <span>
                   Расскажет, куда сходить и как на этом заработать
                 </span>
+            </div>
+            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-4.jpg"/>
         </div>
-        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-4.jpg"/>
-    </div>
 
-    <div class="col-md-12 col-xs-12 slide five">
-        <div class="slide-text">
+        <div class="col-md-12 col-xs-12 slide five">
+            <div class="slide-text">
                 <span>
                   Улучшайзер
                 </span>
-            <span>
+                <span>
                   Зарабатывайте, получайте скидки и становитесь популярнее
                 </span>
+            </div>
+            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-5.jpg"/>
+            <div class="slide-content">
+                <a class="bl_button" href="#">Начать</a>
+            </div>
         </div>
-        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-5.jpg"/>
-        <div class="slide-content">
-            <a class="bl_button" href="#">Начать</a>
-        </div>
+
     </div>
+
 
 </div>
