@@ -8582,8 +8582,18 @@ address {
   D. Dividers
 ================================================= */
 hr {
-  margin: 35px 0;
-  border-top: 1px solid #DDD;
+  margin: 5px auto;
+  width: 80%;
+  border:none;
+  height: 2px;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left, rgba(249,249,249,0.25) 0%, rgba(249,249,249,1) 50%, rgba(249,249,249,0.25) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(249,249,249,0.25)), color-stop(50%,rgba(249,249,249,1)), color-stop(100%,rgba(249,249,249,0.25)));
+  background: -webkit-linear-gradient(left, rgba(249,249,249,0.25) 0%,rgba(249,249,249,1) 50%,rgba(249,249,249,0.25) 100%);
+  background: -o-linear-gradient(left, rgba(249,249,249,0.25) 0%,rgba(249,249,249,1) 50%,rgba(249,249,249,0.25) 100%);
+  background: -ms-linear-gradient(left, rgba(249,249,249,0.25) 0%,rgba(249,249,249,1) 50%,rgba(249,249,249,0.25) 100%);
+  background: linear-gradient(to right, rgba(249,249,249,0.25) 0%,rgba(249,249,249,1) 50%,rgba(249,249,249,0.25) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40f9f9f9', endColorstr='#40f9f9f9',GradientType=1 );
 }
 hr.alt {
   border-top: 1px dashed #cccccc;
@@ -11646,8 +11656,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 14px;
 }
 .navbar-text {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15.5px;
+  margin-bottom: 15.5px;
 }
 @media (min-width: 480px) {
   .navbar-text {
@@ -17183,7 +17193,7 @@ body {
 #main {
   position: relative;
   min-height: 100%;
-  background: #eeeeee;
+  background: #000000;
 }
 /* psuedo background */
 #main:before {
@@ -17193,12 +17203,12 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #eeeeee;
+  background: #000000;
 }
 #content_wrapper {
   position: relative;
   left: 0px;
-  margin-left: 230px;
+  margin-left: 225px;
 }
 /* Transitions */
 body.onload-check .navbar,
@@ -17247,7 +17257,7 @@ body.onload-check #topbar {
 }
 body.sidebar-hidden #sidebar_left.affix:before,
 body.sidebar-rtl #sidebar_left.affix:before {
-  left: -230px;
+  left: -225px;
 }
 /* Sidebar User Area - Hidden */
 .user-info.hidden,
@@ -17274,7 +17284,7 @@ body.usermenu-hidden #sidebar_left.affix .user-info + .user-divider + .menu-widg
   width: auto;
   left: 0;
   right: 0;
-  margin-left: 230px;
+  margin-left: 225px;
   position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -17288,7 +17298,7 @@ body.usermenu-hidden #sidebar_left.affix .user-info + .user-divider + .menu-widg
 }
 /* fixed state - w/ open sidebar */
 body.sb-l-o #topbar.affix {
-  margin-left: 230px;
+  margin-left: 225px;
 }
 /* fixed state - w/ minified sidebar */
 body.sb-l-m #topbar.affix {
@@ -17302,7 +17312,7 @@ body.sb-l-c #topbar.affix {
   /* fixed state - w/ open sidebar */
   body.sb-l-o #topbar.affix {
     width: 100%;
-    margin-left: 230px;
+    margin-left: 225px;
   }
   /* fixed state - w/ minified sidebar */
   body.sb-l-m #topbar.affix {
@@ -17365,8 +17375,8 @@ body.sidebar-collapsed #sidebar:before {
   font-weight: 600;
   padding-top: 20px;
   padding-bottom: 20px;
-  height: 59px;
-  max-height: 59px;
+  height: 60px;
+  max-height: 60px;
 }
 .navbar .nav > li.open > a,
 .navbar .nav > li:hover > a,
@@ -17684,7 +17694,7 @@ body.sidebar-collapsed #sidebar:before {
   width: 230px;
   height: 60px;
   margin-right: 10px;
-  background-color: transparent;
+  background-color: #000;
   /* Logo */
 }
 .navbar-branding .navbar-brand {
@@ -17696,6 +17706,9 @@ body.sidebar-collapsed #sidebar:before {
   font-size: 17px;
   font-weight: 400;
   letter-spacing: 0.5px;
+}
+.navbar-branding .navbar-brand img {
+  max-height: 60px;
 }
 .navbar-branding .navbar-brand b {
   font-weight: bold;
@@ -18089,7 +18102,7 @@ body.sb-top #toggle_sidemenu_t {
 .navbar.bg-dark .nav > li > a:hover,
 .navbar.bg-dark .nav > li > a:focus {
   color: #FFF;
-  background-color: #2e313d;
+  background-color: #000;
 }
 .navbar.bg-dark .nav > li.dropdown.open .dropdown-menu,
 .navbar.bg-dark .nav > li.dropdown .open .dropdown-menu {
@@ -18848,11 +18861,11 @@ body.tray-rescale .tray-right:hover {
 /* Sidebar Container */
 #sidebar_left {
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 230px;
+  width: 225px;
   min-height: 100%;
   padding-top: 60px;
   padding-bottom: 40px;
@@ -18893,17 +18906,17 @@ body.tray-rescale .tray-right:hover {
 /* Sidebar-Menu Top Level - Title */
 .sidebar-menu > li > a > span:nth-child(2) {
   font-weight: 600;
-  padding-left: 6px;
+  padding-left: 10px;
 }
 /* Sidebar-Menu Top Level - Tray(holds labels,etc) */
 .sidebar-menu li > a > .sidebar-title-tray {
   position: absolute;
-  right: 13px;
+  right: 23px;
   top: -2px;
 }
 /* Sidebar-Menu Top Level - Label */
 .sidebar-menu li > a > .sidebar-title-tray .label {
-  padding: .0em .4em .2em;
+  padding: .0em .5em .2em;
   font-size: 11px;
 }
 /* Sidebar-Menu Top Level - Caret */
@@ -18924,7 +18937,7 @@ body.tray-rescale .tray-right:hover {
 .sidebar-menu > li > ul {
   clear: both;
   display: none;
-  width: 230px;
+  width: 225px;
   height: auto;
 }
 .sidebar-menu li > a.menu-open + ul {
@@ -19595,7 +19608,10 @@ body.sb-l-m .navbar-brand {
 ========================================================= */
 /* Sidebar Container */
 #sidebar_left {
-  background-color: #30363e;
+  background: #414959;
+  background: -webkit-gradient(linear, left top, left bottom, from(#414959), to(#000));
+  background: linear-gradient(to bottom, #414959 0%, #000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414959', endColorstr='#000000',GradientType=0 );
 }
 /* Menu Item - Label Color */
 .sidebar-menu .sidebar-label {
@@ -19612,6 +19628,8 @@ body.sb-l-m .navbar-brand {
 /* Top Level Menu Item - Text Color */
 .sidebar-menu > li > a {
   color: #ffffff;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 /* Top Level Menu Item - BG Color:hover */
 .sidebar-menu > li > a:hover,
@@ -19947,7 +19965,7 @@ body.sb-l-m.mobile-view .nano > .nano-pane {
   }
   /* Adjust Navbar Toggle - Sidebar Open */
   body.sb-l-o .navbar #toggle_sidemenu_l {
-    transform: rotate(90deg);
+    /*transform: rotate(90deg);*/
   }
   /* Adjust Navbar Toggle - Sidebar Minified */
   body.sb-l-o.sb-l-m .navbar #toggle_sidemenu_l {
@@ -20050,11 +20068,11 @@ body.sb-l-m.mobile-view .nano > .nano-pane {
   overflow: hidden;
 }
 .sb-l-o #content_wrapper {
-  margin-left: 230px;
+  margin-left: 225px;
 }
 /*left sidebar closed*/
 .sb-l-c #sidebar_left {
-  left: -230px;
+  left: -225px;
   overflow: hidden;
 }
 .sb-l-c #content_wrapper {
@@ -20109,7 +20127,7 @@ manipulation using an html class aswell */
   #content_wrapper,
   .sb-l-o #content_wrapper {
     margin-left: 0;
-    left: 230px;
+    left: 225px;
   }
   /* Sidebar Left Minified */
   .sb-l-m #content_wrapper {
@@ -20406,7 +20424,7 @@ body.sb-r-o #toggle_sidemenu_r span.glyphicons {
 #content-footer.affix {
   z-index: 1;
   position: fixed;
-  margin-left: 230px;
+  margin-left: 225px;
 }
 /* Match Sidebar States */
 body.sb-l-c #content-footer.affix {
@@ -21540,7 +21558,7 @@ a.bg-system:hover {
   color: #ffffff;
 }
 .bg-dark {
-  background-color: #3b3f4f !important;
+  background-color: #000000 !important;
   color: #9fa4b7;
 }
 a.bg-dark:hover {
@@ -24308,7 +24326,7 @@ blockquote.blockquote-dark {
   }
   body.boxed-layout.sb-l-c #sidebar_left,
   body.boxed-layout.sb-l-c.sb-l-m #sidebar_left {
-    left: -230px;
+    left: -225px;
   }
   body.boxed-layout #sidebar_right {
     display: none;
@@ -24660,12 +24678,12 @@ body.timeline-page .panel-clone {
   A. Content
 ================================================= */
 #content {
-  padding: 15px 8px 40px 11px;
+  padding: 15px 8px 0px 11px;
 }
 /* content padding on large resolutions */
 @media (min-width: 1100px) {
   #content {
-    padding: 25px 20px 50px 21px;
+    padding: 25px 0px 50px 0px;
   }
 }
 /* Adds top padding to md columns as a spacer
@@ -24687,5 +24705,11 @@ body.timeline-page .panel-clone {
   #content .panel .panel-body {
     overflow: hidden !important;
     min-width: 0 !important;
+  }
+}
+@media (max-width: 1080px) {
+  .sidebar-menu > li > a {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

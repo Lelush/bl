@@ -2,52 +2,91 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'BL';
 ?>
-<div class="site-index">
+<div class="row">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+    <div class="col-md-12 col-xs-12 slide first">
+        <div class="slide-text">
+            <span>Социальная сеть</span>
+            <span>нового поколения</span>
         </div>
-
+        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-1.jpg"/>
     </div>
+
+    <div class="col-md-12 col-xs-12 slide second">
+        <div class="slide-text">
+                <span>
+                  BEST LIFE
+                </span>
+            <span>
+                  Получай от жизни все
+                </span>
+        </div>
+        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-2.jpg"/>
+        <div class="slide-content">
+				<span class="heading">
+					Выбери кто ты
+				</span>
+            <span class="text">
+					Создай свой образ и открой его особые возможности
+				</span>
+            <a class="bl_button" href="#">Выбрать</a>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-xs-12 slide third">
+        <div class="slide-text">
+                <span>
+                  BEST LOCATIONS
+                </span>
+        </div>
+        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-3.jpg"/>
+
+        <div class="video-mobile hidden-md hidden-lg">
+            <video id="video1" src="<?=Yii::getAlias('@static')?>/video.mov"></video>
+            <button id="play-Pause"><i id="pP-icon" class="fa fa-play" aria-hidden="true"></i></button>
+        </div>
+        <div class="slide-content">
+                <span class="heading">
+					Лучшие места
+                </span>
+            <span class="text">
+					Поможет определиться с непростым
+					выбором, дав доступ только к лучшим
+					местам отдыха, развлечений, шопинга,
+					услуг и питания, при этом помогая вам
+					становиться популярными, экономить
+					или зарабатывать
+				</span>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-xs-12 slide four">
+        <div class="slide-text">
+                <span>
+                  Гид по городу
+                </span>
+            <span>
+                  Расскажет, куда сходить и как на этом заработать
+                </span>
+        </div>
+        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-4.jpg"/>
+    </div>
+
+    <div class="col-md-12 col-xs-12 slide five">
+        <div class="slide-text">
+                <span>
+                  Улучшайзер
+                </span>
+            <span>
+                  Зарабатывайте, получайте скидки и становитесь популярнее
+                </span>
+        </div>
+        <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-5.jpg"/>
+        <div class="slide-content">
+            <a class="bl_button" href="#">Начать</a>
+        </div>
+    </div>
+
 </div>

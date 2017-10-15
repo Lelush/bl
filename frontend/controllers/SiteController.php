@@ -1,8 +1,11 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\UserForm;
+use kartik\form\ActiveForm;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -12,6 +15,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\web\Response;
 
 /**
  * Site controller
@@ -148,11 +152,16 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        $model = new SignupForm();
+        $model = new UserForm();
+        $model->setScenario('signup');
         if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+            }
+            if ($model->save()) {
+                if (Yii::$app->getUser()->login($model)) {
+                    return $this->redirect('site/choice');
                 }
             }
         }

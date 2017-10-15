@@ -31,6 +31,7 @@ use yii\web\IdentityInterface;
  * @property string $ref
  * @property integer $parent
  * @property string $role
+ * @property string $birthday
  * @property string $last_visit
  * @property string $created_at
  * @property string $updated_at

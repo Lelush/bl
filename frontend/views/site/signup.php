@@ -1,35 +1,90 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
+/* @var $form ThemeForm */
 /* @var $model \frontend\models\SignupForm */
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use frontend\widgets\ThemeForm;
 
-$this->title = 'Signup';
+$this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to signup:</p>
+<div class="col-md-6 col-xs-12 image-block hidden-md hidden-lg">
+    <img src="<?=Yii::getAlias('@static')?>/img/1_step.png"/>
+</div>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+<?php $form = ThemeForm::begin(['id' => 'registration-form']); ?>
+    <div class="col-md-6 col-xs-12">
+        <div id="reg_1" class="registration first">
+            <h1 class="reg-heading">
+                <?=$this->title?>
+            </h1>
+            <span class="reg-text">
+                  Впервые в BL?
+                </span>
+            <span class="reg-text">
+                  Укажите свои данные чтобы быстрее найти<br/>
+                  друзей и близких
+                </span>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+            <?= $form->field($model,'first_name')->textInput(['class'=>'reg-input','placeholder'=>'Ваше имя'])->label(false)?>
+            <?= $form->field($model,'last_name')->textInput(['class'=>'reg-input','placeholder'=>'Ваша фамилия'])->label(false)?>
 
-                <?= $form->field($model, 'email') ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+            <span class="form-label">Дата рождения</span>
+            <div class="row">
+                <div class="col-xs-12">
+                    <?= $form->field($model,'bd_day',['options'=>['style'=>"width:45px;float:left;"]])->dropDownList(range(1,31),['prompt'=>'дд','class'=>'reg-select'])->label(false)?>
+                    <?= $form->field($model,'bd_month',['options'=>['style'=>"width:103px;float:left;"]])->dropDownList(\common\helpers\HDates::monthsList(),['prompt'=>'мм','class'=>'reg-select'])->label(false)?>
+                    <?= $form->field($model,'bd_year',['options'=>['style'=>"width:61px;float:left;"]])->dropDownList(range(1970,2010),['prompt'=>'гггг','class'=>'reg-select'])->label(false)?>
+                    <?= $form->field($model,'birthday')->hiddenInput()->label(false)?>
                 </div>
+            </div>
 
-            <?php ActiveForm::end(); ?>
+            <div class="reg-buttons">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <span id="step_1" class="reg-button next">
+                      Далее
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="reg_2" class="registration second">
+            <h1 class="reg-heading">
+                <?=$this->title?>
+            </h1>
+            <span class="reg-text">
+                  Укажите свой номер телефона и электронную почту<br/>
+                  чтобы обеспечить максимальный уровень безопасности
+                </span>
+
+            <?= $form->field($model,'phone')->widget(\yii\widgets\MaskedInput::className(),[
+                'mask' => '+7 (999) 999-99-99',
+                'options'=>[
+                    'class'=>'reg-input',
+                    'placeholder'=>'+7 (___) ___-__-__'
+                ]
+            ])->label(false)?>
+            <?= $form->field($model,'email')->textInput(['class'=>'reg-input','placeholder'=>'Ваш E-Mail'])->label(false)?>
+
+            <div class="reg-buttons">
+                <div class="col-md-4">
+                    <span id="back" class="reg-button back">
+                      Назад
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <?= Html::submitButton('Завершить регистрацию', ['class' => 'reg-button next', 'name' => 'signup-button']) ?>
+                </div>
+            </div>
         </div>
     </div>
+<? ThemeForm::end(); ?>
+
+<div class="col-md-6 col-xs-12 image-block hidden-xs">
+    <img src="<?=Yii::getAlias('@static')?>/img/1_step.png" style="width: 100%"/>
 </div>

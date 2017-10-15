@@ -9,6 +9,8 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\components\CNavBar;
+use frontend\components\CNav;
 
 AppAsset::register($this);
 ?>
@@ -22,60 +24,393 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-</head>
-<body>
-<?php $this->beginBody() ?>
 
-<div class="wrap">
+    <?php $this->registerLinkTag(['rel'=>'shortcut icon', 'href'=>'/img/favicon.ico'])?>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="sb-l-o sb-r-c">
+<?php $this->beginBody() ?>
+<div class="menu-overlay"></div>
+
+<!-- Start: Main -->
+<div id="main">
+
+    <!-- Start: Header -->
     <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
+    CNavBar::begin([
+        'brandLabel' => 'Выбери свое будущее',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'tag' => 'header',
+            'class' => 'navbar-fixed-top bg-dark',
         ],
+        'type' => Yii::$app->user->isVirtualMode() ? CNavBar::TYPE_WARNING : null
     ]);
+    //        echo '<p class="navbar-text">Баланс: 100р. '.Html::a('Пополнить', ['/site/balance']).'</p>';
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        [
+            'label' => 'Уведомления',
+            'url' => ['/site/notice'],
+            'badge' => [
+                'count' => 3,
+                'type' => 'danger'
+            ]
+        ],
+        /*[
+            'label' => 'Поддержка',
+            'url' => ['/site/support'],
+
+        ],
+        [
+            'label' => 'Права доступа',
+            'url' => ['/site/rbac'],
+        ],
+        [
+            'icon' => [
+                'name' => 'glyphicon glyphicon-cog',
+
+            ],
+            'url' => ['/site/settings']
+        ],*/
+
+
+
     ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
+//    if (Yii::$app->user->isGuest) {
+//        $menuItems[] = [
+//            'icon' => [
+//                'name' => 'glyphicon glyphicon-log-in',
+//
+//            ],
+//            'url' => ['/site/login']
+//        ];
+//    } elseif(Yii::$app->user->isVirtualMode()) {
+//        $menuItems[] = [
+//            'label' => isset($this->getUser()->username) ? $this->getUser()->username: '',
+//            'items' => [
+//                [
+//                    'icon' => [
+//                        'name' => 'glyphicon glyphicon-log-out',
+//                    ],
+//                    'label' => 'Завершить виртуальный режим',
+//                    'url' => ['/site/virtual-logout'],
+//                    'linkOptions' => ['data-method' => 'post'],
+//                    'options' => [
+//                        'class' => 'dropdown-footer ',
+//                    ],
+//                ]
+//            ]
+//        ];
+//    }else {
+//        $menuItems[] = [
+//            'label' => isset($this->getUser()->username) ? $this->getUser()->username: '',
+//            'items' => [
+//                [
+//                    'icon' => [
+//                        'name' => 'glyphicon glyphicon-log-out',
+//
+//                    ],
+//                    'label' => 'Выход',
+//                    'url' => ['/site/logout'],
+//                    'linkOptions' => ['data-method' => 'post'],
+//                    'options' => [
+//                        'class' => 'dropdown-footer',
+//                    ],
+//                ]
+//            ]
+//        ];
+//    }
+
+//    echo CNav::widget([
+//        'options' => ['class' => 'navbar-nav navbar-right'],
+//        'items' => $menuItems,
+//    ]);
+    ?>
+    <ul class="nav navbar-nav navbar-right">
+        <li class="header-li">
+            <a class="tray-notication" href="#">
+                <img src="http://best-locations.2dsd.ru/img/rocket-icon.svg">
+                <span class="sidebar-title-tray">
+                <span class="label label-xs label-rounded bg-danger">1</span>
+              </span>
+            </a>
+        </li>
+        <li class="dropdown header-li">
+            <a class="dropdown-toggle tray-notication" data-toggle="dropdown" href="#">
+                <img src="http://best-locations.2dsd.ru/img/bell-icon.svg">
+                <span class="sidebar-title-tray">
+                <span class="label label-xs label-rounded bg-danger">4</span>
+              </span>
+            </a>
+            <ul class="dropdown-menu media-list w350 animated animated-shorter fadeIn" role="menu">
+                <li class="dropdown-header">
+                    <span class="dropdown-title"> Уведомления</span>
+                    <span class="label label-warning">12</span>
+                </li>
+                <li class="media">
+                    <a class="media-left" href="#"> <img src="/img/avatars/5.jpg" class="mw40" alt="avatar"> </a>
+                    <div class="media-body">
+                        <h5 class="media-heading">Новость
+                            <small class="text-muted">- 08/16/22</small>
+                        </h5> Обновлена 36 дней назад
+                        <a class="text-system" href="#"> Max </a>
+                    </div>
+                </li>
+                <li class="media">
+                    <a class="media-left" href="#"> <img src="/img/avatars/2.jpg" class="mw40" alt="avatar"> </a>
+                    <div class="media-body">
+                        <h5 class="media-heading">Новость
+                            <small class="text-muted">- 08/16/22</small>
+                        </h5> Обновлена 36 дней назад
+                        <a class="text-system" href="#"> Max </a>
+                    </div>
+                </li>
+                <li class="media">
+                    <a class="media-left" href="#"> <img src="/img/avatars/3.jpg" class="mw40" alt="avatar"> </a>
+                    <div class="media-body">
+                        <h5 class="media-heading">Новость
+                            <small class="text-muted">- 08/16/22</small>
+                        </h5> Обновлена 36 дней назад
+                        <a class="text-system" href="#"> Max </a>
+                    </div>
+                </li>
+                <li class="media">
+                    <a class="media-left" href="#"> <img src="/img/avatars/4.jpg" class="mw40" alt="avatar"> </a>
+                    <div class="media-body">
+                        <h5 class="media-heading">Новость
+                            <small class="text-muted">- 08/16/22</small>
+                        </h5> Обновлена 36 дней назад
+                        <a class="text-system" href="#"> Max </a>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="top-people hidden-xs">
+            <a href="#" class="fw600 p15">
+                <img src="http://best-locations.2dsd.ru/img/top-people/top.svg" alt="" style="margin-right: 15px">
+                <img src="/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
+                <img src="/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
+                <img src="/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
+                <img src="/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
+            </a>
+        </li>
+        <li class="top-places hidden-xs">
+          <span>
+            <img src="http://best-locations.2dsd.ru/img/marker.svg"/>
+            Лучшие места
+          </span>
+            <span>
+            Москва
+          </span>
+        </li>
+        <li class="dropdown header-li">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                RUS
+                <i class="icon-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu pv5 animated animated-short flipInX" role="menu">
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class="flag-xs flag-in mr10"></span> English </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class="flag-xs flag-tr mr10"></span> Russian </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <?
+    CNavBar::end();
     ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
+    <!-- End: Header -->
+
+    <!-- Start: Sidebar Left -->
+    <aside id="sidebar_left" class="nano affix nano-primary">
+
+        <!-- Start: Sidebar Left Content -->
+        <div class="sidebar-left-content nano-content">
+
+            <!-- Start: Sidebar Left Menu -->
+            <ul class="nav sidebar-menu">
+                <div class="page-leftbar__login">
+                    <a href="#" class="page-leftbar__login-wrap">
+                        <div class="page-leftbar__login__avatar">
+                            <img src="http://best-locations.2dsd.ru/img/avatar.svg" alt="">
+                        </div>
+                        <div class="page-leftbar__login__avatar-border"></div>
+                        <span class="login-text">Войти</span>
+                    </a>
+                </div>
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/crown.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Моя страница</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/news.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Новости</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/user.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Друзья</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/message.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Сообщения</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/bell.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Уведомления</span>
+                        <span class="sidebar-title-tray">
+                <span class="label label-xs label-rounded bg-danger">1</span>
+              </span>
+                    </a>
+                </li>
+
+                <hr/>
+
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/marker.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Карта</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/star.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Лучшие места</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/lightning.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Возможности</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/diamond.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Вознаграждения</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+              <span>
+                <img src="http://best-locations.2dsd.ru/img/left-nav/chat.svg" alt="">
+              </span>
+                        <span class="sidebar-title">Обновления</span>
+                    </a>
+                </li>
+
+                <hr/>
+
+                <li>
+                    <a href="#">
+                        <span><img src="http://best-locations.2dsd.ru/img/left-nav/plus.svg" alt=""></span>
+                        <span class="sidebar-title">Пригласить друга</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><img src="http://best-locations.2dsd.ru/img/left-nav/settings.svg" alt=""></span>
+                        <span class="sidebar-title">Настройки</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><img src="http://best-locations.2dsd.ru/img/left-nav/docs.svg" alt=""></span>
+                        <span class="sidebar-title">Правила</span>
+                    </a>
+                </li>
+                <li class="bl_button">
+                    <a href="<?= \yii\helpers\Url::to(['site/signup'])?>">
+                        <span class="hidden-md hidden-lg hidden-xs"><img class="hidden-md hidden-lg" src="<?=Yii::getAlias('@static')?>/img/login-button-mobile.svg"></span>
+                        <span class="sidebar-title hidden-sm">Зарегистрироваться</span>
+                    </a>
+                </li>
+
+                <!-- sidebar progress bars -->
+                <li class="sidebar-stat hidden">
+                    <a href="#projectOne" class="fs11">
+                        <span class="fa fa-inbox text-info"></span>
+                        <span class="sidebar-title text-muted">Email Storage</span>
+                        <span class="pull-right mr20 text-muted">35%</span>
+                        <div class="progress progress-bar-xs mh20 mb10">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
+                                <span class="sr-only">35% Complete</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="sidebar-stat hidden">
+                    <a href="#projectOne" class="fs11">
+                        <span class="fa fa-dropbox text-warning"></span>
+                        <span class="sidebar-title text-muted">Bandwidth</span>
+                        <span class="pull-right mr20 text-muted">58%</span>
+                        <div class="progress progress-bar-xs mh20">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 58%">
+                                <span class="sr-only">58% Complete</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- End: Sidebar Menu -->
+        </div>
+        <!-- End: Sidebar Left Content -->
+
+    </aside>
+    <!-- End: Sidebar Left -->
+
+    <!-- Start: Content-Wrapper -->
+    <section id="content_wrapper">
+
+        <!-- Begin: Content -->
+        <section id="content">
+
+            <div class="admin-panels">
+                <?=$content;?>
+            </div>
+
+        </section>
+        <!-- End: Content -->
+
+    </section>
+    <!-- End: Content-Wrapper -->
+
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>

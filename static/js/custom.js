@@ -11,6 +11,20 @@
     Core.init();
 
 
+    $(document).on('click', '#step_1', function () {
+
+        $('#reg_1').hide();
+
+        $('#reg_2').show();
+    });
+
+    $(document).on('click', '#back', function () {
+        $('#reg_1').show();
+
+        $('#reg_2').hide();
+
+    });
+
     // Init Widget Demo JS
     // demoHighCharts.init();
 
