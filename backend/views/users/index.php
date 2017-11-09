@@ -12,7 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -26,16 +25,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
-            // 'email:email',
-            // 'status',
+//            'auth_key',
+//            'password_hash',
+//            'password_reset_token',
+             'email:email',
+             'status',
             // 'ref',
             // 'parent',
             // 'role',
-            // 'last_visit',
-            // 'created_at',
+             'last_visit',
+             'created_at',
             // 'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],
