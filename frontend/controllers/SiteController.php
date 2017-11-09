@@ -1,13 +1,19 @@
 <?php
 namespace frontend\controllers;
 
+use common\enums\CompanyCategory;
+use common\enums\Role;
+use common\enums\UserCategory;
+use common\models\Company;
+use common\models\CompanyInfo;
+use common\models\UserInfo;
 use frontend\models\UserForm;
 use kartik\form\ActiveForm;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
+use frontend\components\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use frontend\models\LoginForm;
@@ -180,13 +186,196 @@ class SiteController extends Controller
             }
             if ($model->save()) {
                 if (Yii::$app->getUser()->login($model)) {
-                    return $this->redirect('site/choice');
+                    return $this->redirect('/site/choose');
                 }
             }
         }
 
         return $this->render('signup', [
             'model' => $model,
+        ]);
+    }
+
+    /**
+     * Signs user up.
+     *
+     * @return mixed
+     */
+    public function actionChoose()
+    {
+        return $this->render('choose', [
+        ]);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function actionCompany()
+    {
+        $user = UserForm::findOne(Yii::$app->getUser()->identity->getId());
+
+        if(Yii::$app->request->post() && $user){
+
+            if(ArrayHelper::keyExists('food',Yii::$app->request->post())){
+                $userInfo = UserInfo::find()->where(['user_id'=>$user->id])->one();
+                if(!$userInfo) {
+                    $userInfo = new UserInfo();
+                }
+                $userInfo->scope = CompanyCategory::FOOD;
+                $userInfo->user_id = $user->id;
+                $user->role = Role::COMPANY;
+                $user->modelUserInfo = $userInfo;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные f');
+                }
+            }
+
+            if(ArrayHelper::keyExists('shopping',Yii::$app->request->post())){
+                $userInfo = UserInfo::find()->where(['user_id'=>$user->id])->one();
+                if(!$userInfo) {
+                    $userInfo = new UserInfo();
+                }
+                $userInfo->scope = CompanyCategory::SHOPPING;
+                $userInfo->user_id = $user->id;
+                $user->role = Role::COMPANY;
+                $user->modelUserInfo = $userInfo;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные sh');
+                }
+            }
+
+            if(ArrayHelper::keyExists('services',Yii::$app->request->post())){
+                $userInfo = UserInfo::find()->where(['user_id'=>$user->id])->one();
+                if(!$userInfo) {
+                    $userInfo = new UserInfo();
+                }
+                $userInfo->scope = CompanyCategory::SERVICES;
+                $userInfo->user_id = $user->id;
+                $user->role = Role::COMPANY;
+                $user->modelUserInfo = $userInfo;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные s');
+                }
+            }
+
+            if(ArrayHelper::keyExists('entertainment',Yii::$app->request->post())){
+                $company = Company::find()->where(['user_id'=>$user->id])->one();
+                if(!$company) {
+                    $company = new Company();
+                }
+                $company->scope = CompanyCategory::ENTERTAINMENT;
+                $company->user_id = $user->id;
+                $user->role = Role::COMPANY;
+                $user->modelCompany = $company;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные e'.var_export($user->modelCompany->getErrors(), true));
+                }
+            }
+        }
+        return $this->render('company', [
+        ]);
+    }
+
+    /**
+     * Signs user up.
+     *
+     * @return mixed
+     */
+    public function actionUsers()
+    {
+        $user = UserForm::findOne(Yii::$app->getUser()->identity->getId());
+
+        if(Yii::$app->request->post() && $user){
+            if(ArrayHelper::keyExists('Luxury',Yii::$app->request->post())){
+                $userInfo = UserInfo::find()->where(['user_id'=>$user->id])->one();
+                if(!$userInfo) {
+                    $userInfo = new UserInfo();
+                }
+                $userInfo->scope = UserCategory::LUXURY;
+                $userInfo->user_id = $user->id;
+                $user->role = Role::USER;
+                $user->modelUserInfo = $userInfo;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
+                }
+            }
+
+            if(ArrayHelper::keyExists('Discounter',Yii::$app->request->post())){
+                $userInfo = UserInfo::find()->where(['user_id'=>$user->id])->one();
+                if(!$userInfo) {
+                    $userInfo = new UserInfo();
+                }
+                $userInfo->scope = UserCategory::DISCOUNTER;
+                $userInfo->user_id = $user->id;
+                $user->role = Role::USER;
+                $user->modelUserInfo = $userInfo;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
+                }
+            }
+
+            if(ArrayHelper::keyExists('Popular',Yii::$app->request->post())){
+                $userInfo = UserInfo::find()->where(['user_id'=>$user->id])->one();
+                if(!$userInfo) {
+                    $userInfo = new UserInfo();
+                }
+                $userInfo->scope = UserCategory::POPULAR;
+                $userInfo->user_id = $user->id;
+                $user->role = Role::USER;
+                $user->modelUserInfo = $userInfo;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
+                }
+            }
+
+            if(ArrayHelper::keyExists('Rich',Yii::$app->request->post())){
+                $userInfo = UserInfo::find()->where(['user_id'=>$user->id])->one();
+                if(!$userInfo) {
+                    $userInfo = new UserInfo();
+                }
+                $userInfo->scope = UserCategory::RICH;
+                $userInfo->user_id = $user->id;
+                $user->role = Role::USER;
+                $user->modelUserInfo = $userInfo;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
+                }
+            }
+
+            if(ArrayHelper::keyExists('Tourist',Yii::$app->request->post())){
+                $userInfo = UserInfo::find()->where(['user_id'=>$user->id])->one();
+                if(!$userInfo) {
+                    $userInfo = new UserInfo();
+                }
+                $userInfo->scope = UserCategory::TOURIST;
+                $userInfo->user_id = $user->id;
+                $user->role = Role::USER;
+                $user->modelUserInfo = $userInfo;
+                if( $user->save() ) {
+                    $this->redirect(['/users/my-page']);
+                } else {
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
+                }
+            }
+        }
+
+        return $this->render('users', [
         ]);
     }
 

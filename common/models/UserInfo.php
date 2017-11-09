@@ -36,10 +36,10 @@ class UserInfo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['gender', 'scope'], 'required'],
-            [['user_id','gender'], 'integer'],
+            [[/*'gender',*/ 'scope'], 'required'],
+            [['user_id','gender', 'scope'], 'integer'],
             [['about'], 'string'],
-            [['avatar', 'scope'], 'string', 'max' => 255],
+            [['avatar'], 'string', 'max' => 255],
             [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

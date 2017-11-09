@@ -77,6 +77,7 @@ return [
             'showScriptName' => false,
             // Disable r= routes
             'enablePrettyUrl' => true,
+            'suffix' => '.html',
             'rules' => array(
                 '/my-page'                                   => 'users/my-page',
                 '<controller:\w+>'                          => '<controller>/index',

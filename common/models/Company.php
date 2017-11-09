@@ -18,6 +18,7 @@ use Yii;
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
+ * @property integer $user_id
  *
  * @property CompanyLike[] $companyLikes
  * @property CompanySuggest[] $companySuggests
@@ -38,9 +39,10 @@ class Company extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status', 'created_at', 'updated_at'], 'integer'],
-            [['name', 'link','scope'], 'required'],
-            [['name', 'link','scope','avatar'], 'string', 'max' => 255],
+            [['status', 'created_at', 'updated_at', 'scope', 'user_id'], 'integer'],
+            [['scope'], 'required'],
+            [['name', 'link'], 'required', 'on'=>'offer'],
+            [['name', 'link','avatar'], 'string', 'max' => 255],
         ];
     }
 

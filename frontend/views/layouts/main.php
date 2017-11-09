@@ -398,7 +398,9 @@ AppAsset::register($this);
     <section id="content_wrapper">
 
         <!-- Begin: Content -->
-        <section id="content">
+        <section id="content"  class="animated">
+
+            <?= Alert::widget() ?>
 
             <?=$content;?>
 

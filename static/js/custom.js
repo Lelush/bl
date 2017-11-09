@@ -25,6 +25,26 @@
 
     });
 
+    $(document).on('click', '.choose-button:not([href])', function (e) {
+        $('#cb-main').hide();
+        e.preventDefault();
+        var id = $(this).attr('data-modal');
+
+        $(".choose-modal").each(function(){
+            $(this).hide().removeClass('opened');
+            if($(this).attr('id') == id) {
+                $(this).show().addClass('opened');
+            }
+        });
+        return false;
+    });
+
+    $(document).on('click', '.choose-modal.opened .more-box_button.back', function (e) {
+        $(".choose-modal.opened").removeClass('opened').hide();
+        $('#cb-main').show();
+        return false;
+    });
+
     // Init Widget Demo JS
     // demoHighCharts.init();
 
