@@ -15,7 +15,7 @@ $prefixFunc = function($message) {
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
-        '@static' => 'http://static.bl.dev',
+        '@static' => 'http://static.blrevolution.com',
     ],
     'components' => [
         'cache' => [
@@ -33,7 +33,7 @@ return [
                     'class' => 'common\components\EmailTarget',
                     'levels' => ['warning', 'error'],
                     'message' => [
-                        'from' => [$params['errorsEmail'] => 'Admigos errors'],
+                        'from' => [$params['errorsEmail'] => 'BL errors'],
                         'to' =>  $params['devEmails'],
                     ],
                     'prefix' => $prefixFunc,

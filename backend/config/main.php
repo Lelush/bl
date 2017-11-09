@@ -73,7 +73,7 @@ return [
             'bundles' => [
                 'yii\bootstrap\BootstrapAsset' => [
                     'sourcePath' => '@upload',
-                    'css' => ['skin/default_skin/css/theme.css'],
+                    'css' => ['skin/admin_skin/css/theme.css'],
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => [
                     'js'=>[]
