@@ -30,15 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
                   друзей и близких
                 </span>
 
-            <?= $form->field($model,'first_name')->textInput(['class'=>'reg-input','placeholder'=>'Ваше имя'])->label(false)?>
-            <?= $form->field($model,'last_name')->textInput(['class'=>'reg-input','placeholder'=>'Ваша фамилия'])->label(false)?>
+            <?= $form->field($model,'first_name')->textInput(['class'=>'form-control reg-input','placeholder'=>'Ваше имя'])->label(false)?>
+            <?= $form->field($model,'last_name')->textInput(['class'=>'form-control reg-input','placeholder'=>'Ваша фамилия'])->label(false)?>
 
             <span class="form-label">Дата рождения</span>
             <div class="row">
                 <div class="col-xs-12">
-                    <?= $form->field($model,'bd_day',['options'=>['style'=>"width:45px;float:left;"]])->dropDownList(range(1,31),['prompt'=>'дд','class'=>'reg-select'])->label(false)?>
-                    <?= $form->field($model,'bd_month',['options'=>['style'=>"width:103px;float:left;"]])->dropDownList(\common\helpers\HDates::monthsList(),['prompt'=>'мм','class'=>'reg-select'])->label(false)?>
-                    <?= $form->field($model,'bd_year',['options'=>['style'=>"width:61px;float:left;"]])->dropDownList(range(1970,2010),['prompt'=>'гггг','class'=>'reg-select'])->label(false)?>
+                    <?= $form->field($model,'bd_day',['options'=>['style'=>"width:45px;float:left;"]])->dropDownList(range(1,31),['prompt'=>'дд','class'=>'form-control reg-select'])->label(false)?>
+                    <?= $form->field($model,'bd_month',['options'=>['style'=>"width:103px;float:left;"]])->dropDownList(\common\helpers\HDates::monthsList(),['prompt'=>'мм','class'=>'form-control reg-select'])->label(false)?>
+                    <?= $form->field($model,'bd_year',['options'=>['style'=>"width:61px;float:left;"]])->dropDownList(range(1970,2010),['prompt'=>'гггг','class'=>'form-control reg-select'])->label(false)?>
                     <?= $form->field($model,'birthday')->hiddenInput()->label(false)?>
                 </div>
             </div>
@@ -66,11 +66,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model,'phone')->widget(\yii\widgets\MaskedInput::className(),[
                 'mask' => '+7 (999) 999-99-99',
                 'options'=>[
-                    'class'=>'reg-input',
+                    'class'=>'form-control reg-input',
                     'placeholder'=>'+7 (___) ___-__-__'
                 ]
             ])->label(false)?>
-            <?= $form->field($model,'email')->textInput(['class'=>'reg-input','placeholder'=>'Ваш E-Mail'])->label(false)?>
+            <?= $form->field($model,'email')->textInput(['class'=>'form-control reg-input','placeholder'=>'Ваш E-Mail'])->label(false)?>
 
             <div class="reg-buttons">
                 <div class="col-md-4">

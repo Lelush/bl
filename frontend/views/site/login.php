@@ -25,8 +25,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <span class="reg-text">
                   Введите свои данные для подтверждения личности
                 </span>
-                <?= $form->field($model, 'email')->textInput(['value'=>$login,'class'=>'reg-input','placeholder'=>'Ваш e-mail'])->label(false);?>
-                <?= $form->field($model, 'password')->passwordInput(['value'=>$login?'123456':null,'class'=>'reg-input','placeholder'=>'Ваш пароль'])->label(false);?>
+                <?= $form->field($model, 'email')->textInput(['value'=>$login,'class'=>'form-control reg-input','placeholder'=>'Ваш e-mail'])->label(false);?>
+                <?= $form->field($model, 'password')->passwordInput(['value'=>$login?'123456':null,'class'=>'form-control reg-input','placeholder'=>'Ваш пароль'])->label(false);?>
 
                 <div class="reg-buttons">
                     <div class="col-md-4">
