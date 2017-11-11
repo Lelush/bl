@@ -15,6 +15,9 @@ use Yii;
  * @property string $about
  * @property integer $gender
  * @property string $scope
+ * @property string $prod
+ * @property string $interests
+ * @property string $state
  *
  * @property string $fullName
  *
@@ -39,7 +42,7 @@ class UserInfo extends \yii\db\ActiveRecord
             [[/*'gender',*/ 'scope'], 'required'],
             [['user_id','gender', 'scope'], 'integer'],
             [['about'], 'string'],
-            [['avatar'], 'string', 'max' => 255],
+            [['avatar','prof','interests','state'], 'string', 'max' => 255],
             [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

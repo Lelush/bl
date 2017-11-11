@@ -11,6 +11,27 @@
     Core.init();
 
 
+    $(document).on('click', '.tab-button', function (e) {
+        $('.tab-button').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+        var id = $(this).attr('data-feed');
+
+        $(".feed-content_box").each(function(){
+            $(this).hide();
+            if($(this).attr('id') == id) {
+                $(this).show();
+            }
+        });
+    });
+
+    $(".tm-input").tagsManager({
+        tagsContainer: '.tags',
+        prefilled: ["Юмор", "Спорт", "Развлечения"],
+        tagClass: 'tm-tag-info',
+    });
+
+
     $(document).on('click', '#step_1', function () {
 
         $('#reg_1').hide();

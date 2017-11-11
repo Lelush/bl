@@ -12,7 +12,7 @@ class CacheController extends Controller
     /**
      * @inheritdoc
      */
-    public function behaviors()
+   /* public function behaviors()
     {
         return [
             'access' => [
@@ -25,7 +25,7 @@ class CacheController extends Controller
                 ],
             ],
         ];
-    }
+    }*/
 
     public function actionFlush()
     {

@@ -1908,7 +1908,7 @@ div.tag-container span.tm-tag{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414959', endColorstr='#000000',GradientType=0 );
 }
 
-textarea.edit-text {
+textarea.form-control {
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(204, 204, 204, 0.3);
@@ -1917,7 +1917,7 @@ textarea.edit-text {
     overflow: hidden;
 }
 
-select.edit-select, input.edit-input  {
+select.form-control, input.form-control  {
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(204, 204, 204, 0.3);

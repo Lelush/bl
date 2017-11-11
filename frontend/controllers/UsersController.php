@@ -41,11 +41,11 @@ class UsersController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['company-detail'],
+                        'actions' => ['view'],
                         'allow'   => true,
                         'roles'   => ['@'],
                     ],[
-                        'actions' => ['my-page'],
+                        'actions' => ['my-page','edit'],
                         'allow'   => true,
                         'roles'   => [
                             Role::COMPANY,
@@ -114,9 +114,9 @@ class UsersController extends Controller
 
     public function actionView($id)
     {
-        $model = $this->getForm($id);
+        $model = $this->findUser($id);
         $userOwner = Yii::$app->user->getIdentity();
-        $isAdmin = Yii::$app->user->can(Role::ADMIN);
+//        $isAdmin = Yii::$app->user->can(Role::ADMIN);
 
         if ($model->load(Yii::$app->request->post())) {
             if (Yii::$app->request->isAjax) {
@@ -145,7 +145,46 @@ class UsersController extends Controller
             }
         }
 
-        return $this->render('view', compact('model'));
+        return $this->render('view', compact('model', 'userOwner'));
+    }
+
+
+
+    public function actionEdit()
+    {
+        $model = $this->getForm(Yii::$app->user->getIdentity()->id);
+        $userOwner = Yii::$app->user->getIdentity();
+//        $isAdmin = Yii::$app->user->can(Role::ADMIN);
+
+        if ($model->load(Yii::$app->request->post())) {
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ArrayHelper::merge(
+                    ActiveForm::validate($model),
+                    $model->company?ActiveForm::validate($model->company):[],
+                    $model->userInfo?ActiveForm::validate($model->userInfo):[]
+                );
+            }
+            if ($model->save()) {
+                if ($model->newPassword) {
+                    $model->setPassword($model->newPassword);
+                    if ($model->save()) {
+                        $this->setFlash('info', "Пароль успешно изменен");
+                    }
+                }else{
+                    $this->setFlash('success', 'Пользователь ' . $model->fullName . ' успешно изменен');
+                }
+                if(Yii::$app->request->post('ajax-save', false)){
+                    $this->redirect(Yii::$app->request->referrer);
+                }else{
+                    $model->refresh();
+                }
+            } else {
+                $this->setFlash('error', ACTION_VALIDATE_ERROR);
+            }
+        }
+
+        return $this->render('edit', compact('model', 'userOwner'));
     }
 
 
