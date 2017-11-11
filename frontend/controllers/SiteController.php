@@ -186,7 +186,7 @@ class SiteController extends Controller
             }
             if ($model->save()) {
                 if (Yii::$app->getUser()->login($model)) {
-                    return $this->redirect('/site/choose');
+                    return $this->redirect(['/site/choose']);
                 }
             }
         }

@@ -238,8 +238,9 @@ AppAsset::register($this);
 
             <!-- Start: Sidebar Left Menu -->
             <ul class="nav sidebar-menu">
+                <? if(Yii::$app->getUser()->isGuest): ?>
                 <div class="page-leftbar__login">
-                    <a href="#" class="page-leftbar__login-wrap">
+                    <a href="<?= Url::to(['/site/login'])?>" class="page-leftbar__login-wrap">
                         <div class="page-leftbar__login__avatar">
                             <img src="<?= Yii::getAlias('@static') ?>/img/avatar.svg" alt="">
                         </div>
@@ -247,9 +248,10 @@ AppAsset::register($this);
                         <span class="login-text">Войти</span>
                     </a>
                 </div>
+                <? endif; ?>
                 <? if(!Yii::$app->getUser()->isGuest): ?>
                 <li>
-                    <a href="<?= Url::to(['/users/me-page'])?>">
+                    <a href="<?= Url::to(['/users/my-page'])?>">
                         <span>
                             <img src="<?= Yii::getAlias('@static') ?>/img/left-nav/crown.svg" alt="">
                         </span>
