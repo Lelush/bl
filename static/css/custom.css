@@ -305,7 +305,7 @@ div.registration.first {
 div.registration.second {
     display: none;
 }
-span.reg-button, a.reg-button {
+.reg-button, a.reg-button {
     display: block;
     padding: 10px 15px;
     text-align: center;
@@ -313,14 +313,16 @@ span.reg-button, a.reg-button {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    border: none;
 }
-span.reg-button:hover, a.reg-button:hover {
+.reg-button:hover, a.reg-button:hover {
     opacity: 0.8;
 }
-span.reg-button.back {
+.reg-button.back {
     background-color: #39404e;
 }
-span.reg-button.next, a.reg-button.next {
+.reg-button.next, a.reg-button.next {
+    width:100%;
     background: #23D6FE;
     background: linear-gradient(45deg, #54f 0%, #23D6FE 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe2387', endColorstr='#ff7618',GradientType=1 );
