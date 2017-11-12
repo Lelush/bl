@@ -77,7 +77,7 @@ return [
             'showScriptName' => false,
             // Disable r= routes
             'enablePrettyUrl' => true,
-            'enableStrictParsing' => true,
+//            'enableStrictParsing' => true,
             'rules' => array(
                 [
                     'pattern' => '/my-page',

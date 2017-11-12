@@ -42,6 +42,12 @@ return [
                         'yii\web\HttpException:404',
                     ],
                 ],
+                'errors' => [
+                    'levels' => ['warning', 'error'],
+                    'class' => 'yii\log\FileTarget',
+                    'logVars' => [],
+                    'logFile' => '@app/runtime/logs/dump.log',
+                ],
                 'debug' => [
                     'levels' => ['info'],
                     'class' => 'yii\log\FileTarget',
