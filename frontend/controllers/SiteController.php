@@ -135,19 +135,33 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+        if ($model->load(Yii::$app->request->post())) {
+            if( ArrayHelper::keyExists('add', Yii::$app->request->post()) ) {
+                $model->subject = 'Сообщение с сайта "Добавить"';
+            }
+            if( ArrayHelper::keyExists('complete', Yii::$app->request->post()) ) {
+                $model->subject = 'Сообщение с сайта "Дополнить"';
+            }
+            if( ArrayHelper::keyExists('suggest', Yii::$app->request->post()) ) {
+                $model->subject = 'Сообщение с сайта "Предложить"';
+            }
+            if(ArrayHelper::keyExists('change', Yii::$app->request->post()) ) {
+                $model->subject = 'Сообщение с сайта "Изменить"';
             }
 
-            return $this->refresh();
-        } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
+            if ($model->validate() && $model->sendEmail(Yii::$app->params['adminEmail'])) {
+                $this->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                return $this->refresh();
+            } else {
+                $this->setFlash('danger', 'Произошла ошибка, проверьте данные');;
+            }
+
+            var_dump($model->attributes);
         }
+
+        return $this->render('contact', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -228,7 +242,7 @@ class SiteController extends Controller
                 if( $user->save() ) {
                     $this->redirect(['/users/my-page']);
                 } else {
-                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные f');
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
                 }
             }
 
@@ -244,7 +258,7 @@ class SiteController extends Controller
                 if( $user->save() ) {
                     $this->redirect(['/users/my-page']);
                 } else {
-                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные sh');
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
                 }
             }
 
@@ -260,7 +274,7 @@ class SiteController extends Controller
                 if( $user->save() ) {
                     $this->redirect(['/users/my-page']);
                 } else {
-                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные s');
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
                 }
             }
 
@@ -276,7 +290,7 @@ class SiteController extends Controller
                 if( $user->save() ) {
                     $this->redirect(['/users/my-page']);
                 } else {
-                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные e'.var_export($user->modelCompany->getErrors(), true));
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
                 }
             }
         }
