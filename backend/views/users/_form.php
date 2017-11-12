@@ -43,7 +43,7 @@ use backend\widgets\ThemeForm;
     ]);?>
     <? if($type==Role::USER):?>
         <div class="col-sm-12">
-            <?= $form->field($model->modelUserInfo, "avatar")->widget(ImageUploadWidget::classname(), ['type' => \common\enums\ImageType::USER, 'src' => $model->modelUserInfo->getLogoSrc()]); ?>
+            <?= $form->field($model->modelUserInfo, "avatar")->widget(ImageUploadWidget::classname(), ['type' => \common\enums\ImageType::USER, 'src' => $model->modelUserInfo->getAvatarSrc()]); ?>
             <?= $form->field($model->modelUserInfo, "scope")->dropDownList(UserCategory::getList(),['prompt'=>'Выберите категорию']); ?>
             <?= $form->field($model->modelUserInfo, "gender")->dropDownList(UserGender::getList(), ['prompt'=>'Выберите пол']); ?>
             <?= $form->field($model->modelUserInfo, "about")->textarea(); ?>

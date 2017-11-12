@@ -8,6 +8,7 @@ use common\helpers\HDev;
 use common\models\BalanceHistory;
 use common\models\Company;
 use common\models\User;
+use common\models\UserInfo;
 use frontend\components\Controller;
 use frontend\models\ChangeBalance;
 use frontend\models\UserAdminForm;
@@ -34,6 +35,20 @@ class UsersController extends Controller
     /**
      * @inheritdoc
      */
+    public function actions()
+    {
+        return [
+            'uploadPhoto' => [
+                'class' => 'frontend\widgets\cropper\actions\UploadAction',
+                'url' => Yii::getAlias('@static').'/images/user',
+                'path' => '@upload/images/user',
+            ]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
@@ -45,7 +60,7 @@ class UsersController extends Controller
                         'allow'   => true,
                         'roles'   => ['@'],
                     ],[
-                        'actions' => ['my-page','edit'],
+                        'actions' => ['my-page','edit','uploadPhoto'],
                         'allow'   => true,
                         'roles'   => [
                             Role::COMPANY,
@@ -161,28 +176,20 @@ class UsersController extends Controller
                 Yii::$app->response->format = Response::FORMAT_JSON;
                 return ArrayHelper::merge(
                     ActiveForm::validate($model),
-                    $model->company?ActiveForm::validate($model->company):[],
-                    $model->userInfo?ActiveForm::validate($model->userInfo):[]
+                    $model->modelCompany ? ActiveForm::validate($model->modelCompany) : [],
+                    $model->modelUserInfo ? ActiveForm::validate($model->modelUserInfo) : []
                 );
             }
             if ($model->save()) {
-                if ($model->newPassword) {
-                    $model->setPassword($model->newPassword);
-                    if ($model->save()) {
-                        $this->setFlash('info', "Пароль успешно изменен");
-                    }
-                }else{
-                    $this->setFlash('success', 'Пользователь ' . $model->fullName . ' успешно изменен');
-                }
-                if(Yii::$app->request->post('ajax-save', false)){
-                    $this->redirect(Yii::$app->request->referrer);
-                }else{
-                    $model->refresh();
-                }
+                $this->setFlash('success', ACTION_CREATE_SUCCESS);
+
+                return $this->redirect(['my-page']);
             } else {
                 $this->setFlash('error', ACTION_VALIDATE_ERROR);
             }
         }
+
+        $model->loadModels();
 
         return $this->render('edit', compact('model', 'userOwner'));
     }

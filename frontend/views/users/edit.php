@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $form ThemeForm */
-/* @var $model \common\models\User */
+/* @var $model \frontend\models\UserForm */
 /* @var $userOwner \common\models\User */
 
 use yii\helpers\Html;
@@ -15,54 +15,65 @@ $isOwner = $model->id == $userOwner->id;
 
 $this->title = $isOwner ? 'Моя страница' : 'Страница пользователя '.$model->fullName;
 $this->params['breadcrumbs'][] = $this->title;
+$interests = $model->modelUserInfo->interestsJson;
+$tagManagerName = Html::getInputName($model->modelUserInfo,'interests');
+$this->registerJs(<<<JS
+    $(".tm-input").tagsManager({
+        tagsContainer: '.tags',
+        prefilled: $interests,
+        tagClass: 'tm-tag-info',
+        hiddenTagListName: '$tagManagerName',
+    });
+JS
+);
 ?>
 <div class="admin-panels col-md-12 col-lg-12 col-xs-12">
-
+    <?php $form = ThemeForm::begin([
+        'enableAjaxValidation' => true,
+        'validateOnBlur'       => true,
+        'options' => ['enctype' => 'multipart/form-data'],
+    ]); ?>
     <div class="col-md-10 col-lg-10 col-xs-12">
         <div class="col-md-12 col-lg-12 col-xs-12 myPage-block myPage-info edit-page">
             <span class="myPage-info__name">
                 <?= $model->fullName; ?>
             </span>
             <div class="myPage-info__info clearfix">
-                <div class="col-md-3">
-                    <div class="row">
-                          <span class="info-heading">
-                            <img class="edit-image center-block" src="<?=Yii::getAlias('@static')?>/img/avatar.png">
-                          </span>
-                    </div>
-                </div>
-                <div class="col-md-9 col-xs-12 mb10">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <label class="edit-upload field prepend-icon file">
-                                    <span class="button btn-primary">Выбрать</span>
-                                    <input type="file" class="gui-file" name="file2" id="file2" onchange="document.getElementById('uploader2').value = this.value;">
-                                    <input type="text" class="gui-input" id="uploader2" placeholder="Загрузите новое фото">
-                                    <label class="field-icon">
-                                        <i class="fa fa-upload"></i>
-                                    </label>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <?php $form = ThemeForm::begin([
-                    'enableAjaxValidation' => true,
-                    'validateOnBlur'       => true,
-                ]); ?>
+
+                <?php echo $form->field($model->modelUserInfo, 'avatar')->widget(\frontend\widgets\cropper\Widget::className(), [
+                    'uploadUrl' => Url::toRoute('/users/uploadPhoto'),
+                    'noPhotoImage' => Yii::getAlias('@static/images/user/default_avatar.jpg'),
+                    'pluginOptions' =>[
+                        'aspectRatio' => 186/382
+                    ],
+                    'thumbnailWidth' => 186,
+                    'cropAreaWidth' => 231,
+                    'thumbnailHeight' => 382,
+                    'cropAreaHeight' => 382,
+                    'width' => 186,
+                    'height' => 382,
+                    'onCompleteJcrop' => 'function(imgName, response, widget){
+                        console.log(arguments, "test");
+                        $(widget).find(".edit-upload").click();
+                        
+                    }'
+                ])->label(false) ?>
+
+                <?= $form->field($model,'id')->hiddenInput()->label(false)?>
+
+
                 <div class="col-md-9 col-xs-12 mb10">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="row">
                                 <span class="info-heading">
-                                    <?= ''?>
+                                    <?= 'Статус'?>
                                 </span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                                <?= $form->field($model,'status')->textInput(['placeholder'=>'Я сейчас...'])->label(false)?>
+                                <?= $form->field($model->modelUserInfo,'state')->textInput(['placeholder'=>'Я сейчас...'])->label(false)?>
                             </div>
                         </div>
                     </div>
@@ -79,7 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                                <?= $form->field($model->userInfo,'state')->dropDownList(\common\enums\UserCategory::getList())->label(false)?>
+                                <?= $form->field($model->modelUserInfo,'scope')->dropDownList(\common\enums\UserCategory::getList())->label(false)?>
                             </div>
                         </div>
                     </div>
@@ -96,7 +107,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                                <?= $form->field($model->userInfo,'prof')->textInput(['placeholder'=>'Например: Менеджер по продажам'])->label(false)?>
+                                <?= $form->field($model->modelUserInfo,'prof')->textInput(['placeholder'=>'Например: Менеджер по продажам'])->label(false)?>
                             </div>
                         </div>
                     </div>
@@ -113,7 +124,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                                <?= $form->field($model->userInfo,'interests')->textInput(['placeholder'=>'Например: Бокс, Еда...','class'=>'form-control tm-input'])->label(false)?>
+                                <?= $form->field($model->modelUserInfo,'interests')->textInput(['placeholder'=>'Например: Бокс, Еда...','class'=>'form-control tm-input'])->label(false)?>
                                 <div class="tag-container tags"></div>
                             </div>
                         </div>
@@ -131,13 +142,13 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                                <?= $form->field($model->userInfo,'interests')->textarea(['class'=>'form-control textarea-grow'])->label(false)?>
+                                <?= $form->field($model->modelUserInfo,'about')->textarea(['class'=>'form-control textarea-grow', 'rows'=>4])->label(false)?>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <? ThemeForm::end(); ?>
+
             </div>
         </div>
 
@@ -159,7 +170,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-7">
                                     <div class="row">
-                                        <input type="text" id="" class="edit-input form-control" placeholder="vk.com/id12345">
+                                        <?= $form->field($model->modelUserInfo,'vk')->textInput(['placeholder'=>'vk.com/id12345'])->label(false)?>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +181,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-7">
                                     <div class="row">
-                                        <input type="text" id="" class="edit-input form-control" placeholder="facebook.com/example">
+                                        <?= $form->field($model->modelUserInfo,'fb')->textInput(['placeholder'=>'facebook.com/example'])->label(false)?>
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +191,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-7">
                                     <div class="row">
-                                        <input type="text" id="" class="edit-input form-control" placeholder="twitter.com/example">
+                                        <?= $form->field($model->modelUserInfo,'tw')->textInput(['placeholder'=>'twitter.com/example'])->label(false)?>
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +202,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <div class="col-md-7">
                                     <div class="row">
-                                        <input type="text" id="" class="edit-input form-control" placeholder="@example">
+                                        <?= $form->field($model->modelUserInfo,'inst')->textInput(['placeholder'=>'@example'])->label(false)?>
                                     </div>
                                 </div>
                             </div>
@@ -204,13 +215,12 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="col-md-12 col-lg-12 col-xs-12 mb30">
-            <div class="row">
-                <button class="edit-save pull-right">
-                    Сохранить
-                </button>
+            <div class="form-group pull-right">
+                <?= Html::a('Отмена',['/my-page'], ['class' => 'btn btn-default']) ?>
+                <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => 'btn edit-save']) ?>
             </div>
         </div>
 
     </div>
-
+    <? ThemeForm::end(); ?>
 </div>

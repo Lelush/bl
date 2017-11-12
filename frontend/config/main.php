@@ -77,14 +77,43 @@ return [
             'showScriptName' => false,
             // Disable r= routes
             'enablePrettyUrl' => true,
-            'suffix' => '.html',
+            'enableStrictParsing' => true,
             'rules' => array(
-                '/my-page'                                   => 'users/my-page',
-                '<controller:\w+>'                          => '<controller>/index',
-                '<controller:\w+>/<id:\d+>'                 => '<controller>/view',
-                'images/upload/<type:[-\w]+>'               => 'images/upload',
-                '<controller:\w+>/<action:[-\w]+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:[-\w]+>'          => '<controller>/<action>',
+                [
+                    'pattern' => '/my-page',
+                    'route' => 'users/my-page',
+                    'suffix' => '.html'
+                ],
+                [
+                    'pattern' => 'images/upload/<type:[-\w]+>',
+                    'route' => 'images/upload',
+                    'suffix' => ''
+                ],
+                [
+                    'pattern'=>'users/uploadPhoto',
+                    'route'=>'users/uploadPhoto',
+                    'suffix'=>'/'
+                ],
+                [
+                    'pattern' => '<controller:\w+>',
+                    'route' => '<controller>/index',
+                    'suffix' => '.html'
+                ],
+                [
+                    'pattern' => '<controller:\w+>/<id:\d+>',
+                    'route' => '<controller>/view',
+                    'suffix' => '.html'
+                ],
+                [
+                    'pattern' => '<controller:\w+>/<action:[-\w]+>/<id:\d+>',
+                    'route' => '<controller>/<action>',
+                    'suffix' => '.html'
+                ],
+                [
+                    'pattern' => '<controller:\w+>/<action:[-\w]+>',
+                    'route' => '<controller>/<action>',
+                    'suffix' => '.html'
+                ],
 
             ),
         ],

@@ -195,13 +195,13 @@ class UserForm extends User
      */
     private function saveModel($oldModel, $newModel)
     {
+        $newModel->user_id = $this->id;
         if ($oldModel) {
             $oldModel->attributes = $newModel->attributes;
             if (!$oldModel->save()) {
                 HDev::logSaveError($oldModel);
             }
         } else {
-            $newModel->user_id = $this->id;
             if (!$newModel->save()) {
                 HDev::logSaveError($oldModel);
             }

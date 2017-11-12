@@ -5,6 +5,7 @@ namespace common\models;
 use common\enums\ImageType;
 use common\helpers\HImage;
 use Yii;
+use yii\helpers\Json;
 
 /**
  * This is the model class for table "user_info".
@@ -15,11 +16,18 @@ use Yii;
  * @property string $about
  * @property integer $gender
  * @property string $scope
- * @property string $prod
+ * @property string $prof
  * @property string $interests
  * @property string $state
+ * @property string $vk
+ * @property string $tw
+ * @property string $fb
+ * @property string $inst
  *
+ * @property string $avatarSrc
  * @property string $fullName
+ * @property string $interestsJson
+ * @property array  $interestsArray
  *
  * @property User $user
  */
@@ -39,10 +47,11 @@ class UserInfo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[/*'gender',*/ 'scope'], 'required'],
-            [['user_id','gender', 'scope'], 'integer'],
+            [[/*'gender',*/
+                'scope'], 'required'],
+            [['user_id', 'gender', 'scope'], 'integer'],
             [['about'], 'string'],
-            [['avatar','prof','interests','state'], 'string', 'max' => 255],
+            [['avatar', 'prof', 'interests', 'state', 'vk', 'fb', 'inst', 'tw'], 'string', 'max' => 255],
             [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
@@ -70,15 +79,27 @@ class UserInfo extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
-    public function getLogoSrc()
+    public function getAvatarSrc()
     {
-        return HImage::getSrc(ImageType::USER, $this->getLogoUrl());
+        return HImage::getSrc(ImageType::USER, $this->getAvatarUrl());
     }
+
     /**
      * получение урл до лого оффера
      */
-    private function getLogoUrl()
+    private function getAvatarUrl()
     {
         return $this->avatar ? $this->avatar : Yii::$app->params['defaultAvatar'];
+    }
+
+    public function getInterestsArray()
+    {
+        return $this->interests ? explode(',', $this->interests) : [];
+    }
+
+
+    public function getInterestsJson()
+    {
+        return Json::encode($this->getInterestsArray());
     }
 }

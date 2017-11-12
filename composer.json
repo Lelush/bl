@@ -27,7 +27,10 @@
         "bower-asset/blueimp-file-upload": "*",
         "omnilight/yii2-sypexgeo": "*",
         "wbraganca/yii2-fancytree-widget": "*",
-        "kartik-v/yii2-export": "*"
+        "kartik-v/yii2-export": "*",
+        "yiisoft/yii2-imagine": "*",
+        "bower-asset/Jcrop": "=0.9.12",
+        "bower-asset/simple-ajax-uploader": "2.6.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

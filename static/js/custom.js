@@ -25,12 +25,6 @@
         });
     });
 
-    $(".tm-input").tagsManager({
-        tagsContainer: '.tags',
-        prefilled: ["Юмор", "Спорт", "Развлечения"],
-        tagClass: 'tm-tag-info',
-    });
-
 
     $(document).on('click', '#step_1', function () {
 

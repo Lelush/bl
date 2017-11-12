@@ -97,7 +97,7 @@ a.tray-notication {
 }
 
 div.image-block {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/2-layers.svg);
+    background-image: url(/img/2-layers.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
@@ -159,7 +159,7 @@ li.top-people:hover {
 }
 li.top-places {
     padding: 0 25px;
-    background-image: url(http://best-locations.2dsd.ru/img/city-bg.png);
+    background-image: url(/img/city-bg.png);
     background-position: center;
     background-size: cover;
 }
@@ -575,7 +575,7 @@ div.update-form {
 }
 
 div.image-block-updates {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/car.png);
+    background-image: url(/img/car.png);
     background-size: 120%;
     background-repeat: no-repeat;
     background-position: left;
@@ -669,7 +669,7 @@ div.myPage-info .info-heading, .social-heading {
 }
 
 div.myPage-views {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/views.png);
+    background-image: url(/img/views.png);
     position: absolute;
     background-repeat: no-repeat;
     padding-left: 25px;
@@ -681,7 +681,7 @@ div.myPage-views {
 }
 
 a.myPage-stat {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/shape.png);
+    background-image: url(/img/shape.png);
     padding-left: 30px;
     color: white;
     background-repeat: no-repeat;
@@ -783,8 +783,8 @@ div.myPage-stat {
 }
 
 div.myPage-info span {
-    display: block;
-    color: white;
+    /*display: block;*/
+    /*color: white;*/
 }
 
 .myPage-info__name {
@@ -931,7 +931,7 @@ div.myPage-feed .feed-content .feed-content_box .people-tabs .people-tabs_tab.ac
 }
 
 #main.choose:before {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/pers-bg.png);
+    background-image: url(/img/pers-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1140,19 +1140,19 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress
 }
 
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.blue:before {
-    background-image:url("http://bl.2dsd.ru/new/assets/img/users/light-blue.png");
+    background-image:url("/img/users/light-blue.png");
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.green:before {
-    background-image:url("http://bl.2dsd.ru/new/assets/img/users/light-green.png");
+    background-image:url("/img/users/light-green.png");
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.yellow:before {
-    background-image:url("http://bl.2dsd.ru/new/assets/img/users/light-yellow.png");
+    background-image:url("/img/users/light-yellow.png");
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.red:before {
-    background-image:url("http://bl.2dsd.ru/new/assets/img/users/light-red.png");
+    background-image:url("/img/users/light-red.png");
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.purp:before {
-    background-image:url("http://bl.2dsd.ru/new/assets/img/users/light-purp.png");
+    background-image:url("/img/users/light-purp.png");
 }
 
 div.choose-blocks .choose-block .choose-block__bars .choose-block__icon {
@@ -1225,35 +1225,35 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__barWrapper {
 }
 .choose-block_more .choose-block_more-box .more-box__block.green{
     background: #00cc5f;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-discounter.png);
+    background-image: url(/img/users/bg-discounter.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more .choose-block_more-box .more-box__block.peach{
     background: #fc7568;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-popular.png);
+    background-image: url(/img/users/bg-popular.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more .choose-block_more-box .more-box__block.blue{
     background: #64a0ff;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-rich.png);
+    background-image: url(/img/users/bg-rich.png);
     background-size: contain;
     background-position: bottom left;
     background-repeat: no-repeat;
 }
 .choose-block_more .choose-block_more-box .more-box__block.dark{
     background: #252525;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-luxury2.png);
+    background-image: url(/img/users/bg-luxury2.png);
     background-size: cover;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more .choose-block_more-box .more-box__block.yellow{
     background: #ffb41a;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-tourist.png);
+    background-image: url(/img/users/bg-tourist.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -1261,28 +1261,28 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__barWrapper {
 
 .choose-block_more.company .choose-block_more-box .more-box__block.green{
     background: #00ca5f;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-food.png);
+    background-image: url(/img/users/bg-food.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more.company .choose-block_more-box .more-box__block.peach{
     background: #fc7568;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-discounter.png);
+    background-image: url(/img/users/bg-discounter.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more.company .choose-block_more-box .more-box__block.blue{
     background: #64a0ff;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-services2.png);
+    background-image: url(/img/users/bg-services2.png);
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
 }
 .choose-block_more.company .choose-block_more-box .more-box__block.yellow{
     background: #ffb41a;
-    background-image: url(http://bl.2dsd.ru/new/assets/img/users/bg-fun2.png);
+    background-image: url(/img/users/bg-fun2.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -1295,7 +1295,7 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__barWrapper {
 }
 
 #main.map:before {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/map-bg.png);
+    background-image: url(/img/map-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1594,7 +1594,7 @@ div.map-filter .map-filter__item.search .filter-search__button, .friends-search_
     right: 10px;
     top: 50%;
     margin-top: -10px;
-    background: url(http://bl.2dsd.ru/new/assets/img/users/search-icon.svg);
+    background: url(/img/users/search-icon.svg);
     width: 20px;
     height: 20px;
     border: none;
@@ -1933,16 +1933,17 @@ label.edit-upload {
 }
 
 label.edit-upload .button {
-    position: absolute;
+    /*position: absolute;*/
     right: 0;
     height: 100%;
-    width: 30%;
+    /*width: 30%;*/
     text-align: center;
     line-height: 30px;
     background: #414959;
     background: -webkit-gradient(linear, left top, left bottom, from(#414959), to(#000));
     background: linear-gradient(to bottom, #535c6e 0%, #343434 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414959', endColorstr='#000000',GradientType=0 );
+    display: block;
 }
 
 label.edit-upload input.gui-file {
@@ -1972,7 +1973,7 @@ button.edit-save {
     background: #23D6FE;
     background: linear-gradient(45deg, #54f 0%, #23D6FE 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe2387', endColorstr='#ff7618',GradientType=1 );
-    display: block;
+    /*display: block;*/
     border: none;
     padding: 10px 15px;
     text-align: center;
@@ -2207,27 +2208,46 @@ div.list-box_settings input.slider-countbox {
 }
 
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-1 {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/notify/notify-1.svg);
+    background-image: url(/img/notify/notify-1.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-2 {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/notify/notify-2.svg);
+    background-image: url(/img/notify/notify-2.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-3 {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/notify/notify-3.svg);
+    background-image: url(/img/notify/notify-3.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-4 {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/notify/notify-4.svg);
+    background-image: url(/img/notify/notify-4.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-5 {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/notify/notify-5.svg);
+    background-image: url(/img/notify/notify-5.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-6 {
-    background-image: url(http://bl.2dsd.ru/new/assets/img/notify/notify-6.svg);
+    background-image: url(/img/notify/notify-6.svg);
 }
 
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box span {
     display: block;
     line-height: 25px;
+}
+
+.cropper-image-block {
+    min-height: 382px;
+}
+
+.cropper-update-area {
+    position: absolute;
+    background: #262a30;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.thumbnail {
+    padding: 0;
+    border-width: 0;
+    border-radius: 10px;
 }
 
 
@@ -2317,7 +2337,7 @@ div.list-box_settings input.slider-countbox {
     }
 
     div.slide.first {
-        background-image: url('http://bl.2dsd.ru/new/assets/img/mobile-first.jpg');
+        background-image: url('/img/mobile-first.jpg');
         height: 730px;
         width: 100%;
         background-size: 150%;
@@ -2334,7 +2354,7 @@ div.list-box_settings input.slider-countbox {
     }
 
     div.slide.second {
-        background-image: url('http://bl.2dsd.ru/new/assets/img/mobile-two.jpg');
+        background-image: url('/img/mobile-two.jpg');
         height: 410px;
         top: auto;
         width: 100%;
@@ -2398,7 +2418,7 @@ div.list-box_settings input.slider-countbox {
     }
 
     div.slide.third {
-        /*background-image: url('http://bl.2dsd.ru/new/assets/img/mobile-three.jpg');*/
+        /*background-image: url('/img/mobile-three.jpg');*/
         height: 435px;
         margin-top: 30px;
         top: auto;
@@ -2472,7 +2492,7 @@ div.list-box_settings input.slider-countbox {
 
 
     div.slide.four {
-        background-image: url('http://bl.2dsd.ru/new/assets/img/mobile-four.jpg');
+        background-image: url('/img/mobile-four.jpg');
         height: 350px;
         width: 100%;
         top: auto;
@@ -2503,7 +2523,7 @@ div.list-box_settings input.slider-countbox {
     }
 
     div.slide.five {
-        background-image: url('http://bl.2dsd.ru/new/assets/img/mobile-five.jpg');
+        background-image: url('/img/mobile-five.jpg');
         height: 260px;
         margin-top: 50px;
         width: 100%;
