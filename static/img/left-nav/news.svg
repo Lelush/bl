@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Левое-меню" transform="translate(-28.000000, -232.000000)" fill="#FFFFFF">
+            <g id="Group-2" transform="translate(6.000000, 0.000000)">
+                <g id="Group-10" transform="translate(22.000000, 232.000000)">
+                    <g id="layers-3">
+                        <g id="Capa_1">
+                            <path d="M6.18199024,0 L18,0 L18,11.8182732 L16.6829268,11.8182732 L16.6829268,1.31707317 L6.18199024,1.31707317 L6.18199024,0 L6.18199024,0 Z M3.5243122,3.97457561 L14.0255122,3.97457561 L14.0255122,14.4757756 L15.3425854,14.4757756 L15.3425854,2.65750244 L3.5243122,2.65750244 L3.5243122,3.97457561 L3.5243122,3.97457561 Z M12.476722,18 L0,18 L0,5.52327805 L12.476722,5.52327805 L12.476722,18 L12.476722,18 Z M11.1596488,6.84035122 L1.31707317,6.84035122 L1.31707317,16.6829268 L11.1596488,16.6829268 L11.1596488,6.84035122 L11.1596488,6.84035122 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
