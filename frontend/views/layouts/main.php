@@ -33,6 +33,16 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <div class="menu-overlay"></div>
 
+<div class="video-overlay">
+  <span id="videoPop-up_close">
+    <i class="fa fa-close"></i>
+  </span>
+    <div class="video-desktop hidden-xs hidden-sm">
+        <video id="video2" src="video.mov"></video>
+        <button id="play-Pause2"><i id="pP-icon2" class="fa fa-play" aria-hidden="true"></i></button>
+    </div>
+</div>
+
 <!-- Start: Main -->
 <div id="main">
 
@@ -192,10 +202,10 @@ AppAsset::register($this);
         <li class="top-people hidden-xs">
             <a href="#" class="fw600 p15">
                 <img src="<?= Yii::getAlias('@static') ?>/img/top-people/top.svg" alt="" style="margin-right: 15px">
-                <img src="/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
-                <img src="/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
-                <img src="/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
-                <img src="/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15">
+                <img src="/img/avatars/1.jpg" alt="avatar" class="mw40 br64 mr15">
+                <img src="/img/avatars/1.jpg" alt="avatar" class="mw40 br64 mr15">
+                <img src="/img/avatars/1.jpg" alt="avatar" class="mw40 br64 mr15">
+                <img src="/img/avatars/1.jpg" alt="avatar" class="mw40 br64 mr15">
             </a>
         </li>
         <li class="top-places hidden-xs">

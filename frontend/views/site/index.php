@@ -9,12 +9,12 @@ $this->title = 'BL';
     <div class="row">
 
         <div class="col-md-12 col-xs-12 slide first">
-            <div class="slide-text">
+            <div class="slide-text hidden-md hidden-lg">
                 <span>Социальная сеть</span>
                 <span>нового поколения</span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-1.jpg"/>
-        </div>
+            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/1/assets/img/sl1de.png">            </div>
+    </div>
 
         <div class="col-md-12 col-xs-12 slide second">
             <div class="slide-text">
