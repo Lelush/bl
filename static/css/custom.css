@@ -18,51 +18,13 @@
 }
 
 #spin:after {
-    content:"";
+    content:"Выбери свое будущее";
     animation: spin 2s linear infinite;
+    font-family: IntroBold;
 }
 
-
-@-webkit-keyframes changeLetter {
-    0% {
-        content: "Выбери свое будущее";
-    }
-    50% {
-        color: white;
-    }
-    100% {
-        content: "Revolution";
-    }
-}
-@keyframes changeLetter {
-    0% {
-        content: "Выбери свое будущее";
-    }
-    50% {
-        color: white;
-    }
-    100% {
-        content: "Revolution";
-    }
-}
-.element {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-.element:after {
-    -webkit-animation: changeLetter 3s linear infinite alternate;
-    animation: changeLetter 3s linear infinite alternate;
-    display: block;
-    content: "A";
-    font-size: 80px;
+.pb0 {
+    padding-bottom: 0!important;
 }
 
 
@@ -97,7 +59,7 @@ a.tray-notication {
 }
 
 div.image-block {
-    background-image: url(/img/2-layers.svg);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/2-layers.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
@@ -121,7 +83,7 @@ div.slide img {
 }
 
 header.navbar.bg-dark {
-    background: transparent!important;
+    background: rgba(0, 0, 0, 0.3)!important;
 }
 
 li.bl_button a, li.bl_button a span {
@@ -137,9 +99,10 @@ span.logo-text {
     float: right;
     width: 70%;
     line-height: 18px;
-    font-size: 12px;
-    margin-top: 8px;
+    font-size: 15px;
+    margin-top: 10px;
     font-weight: bold;
+    font-family: IntroBold;
 }
 
 a.tray-notication span {
@@ -151,7 +114,7 @@ a.tray-notication span {
 }
 
 li.header-li {
-    background: rgba(0, 0, 0, 0.3);
+    /*background: rgba(0, 0, 0, 0.3);*/
 }
 
 li.top-people:hover {
@@ -159,7 +122,7 @@ li.top-people:hover {
 }
 li.top-places {
     padding: 0 25px;
-    background-image: url(/img/city-bg.png);
+    background-image: url(http://best-locations.2dsd.ru/img/city-bg.png);
     background-position: center;
     background-size: cover;
 }
@@ -305,7 +268,7 @@ div.registration.first {
 div.registration.second {
     display: none;
 }
-.reg-button, a.reg-button {
+span.reg-button, a.reg-button {
     display: block;
     padding: 10px 15px;
     text-align: center;
@@ -313,16 +276,14 @@ div.registration.second {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    border: none;
 }
-.reg-button:hover, a.reg-button:hover {
+span.reg-button:hover, a.reg-button:hover {
     opacity: 0.8;
 }
-.reg-button.back {
+span.reg-button.back {
     background-color: #39404e;
 }
-.reg-button.next, a.reg-button.next {
-    width:100%;
+span.reg-button.next, a.reg-button.next {
     background: #23D6FE;
     background: linear-gradient(45deg, #54f 0%, #23D6FE 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe2387', endColorstr='#ff7618',GradientType=1 );
@@ -367,7 +328,7 @@ div.slide-text span, .slide-content span {
 div.slide.second .slide-text {
     position: absolute;
     top: 65px;
-    left: 50px;
+    left: 65px;
     font-size: 32px;
 }
 
@@ -378,20 +339,21 @@ div.slide.second .slide-text span:first-child {
 div.slide.second .slide-text span:last-child {
     display: block;
     font-family: Gotham;
-    font-size: 12px;
+    font-size: 17px;
 }
 
 div.slide.second .slide-content {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     width: 100%;
     text-align: center;
     font-size: 23px;
 }
 div.slide.second .slide-content .text {
-    font-size: 17px;
+    font-size: 16px;
+    font-family: Gotham;
     display: block;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
 }
 
 div.slide.third {
@@ -403,7 +365,7 @@ div.slide.third .slide-text {
     position: absolute;
     left: 50%;
     margin-left: -142px;
-    top: 30px;
+    top: 55px;
 }
 div.slide.third .slide-content {
     position: absolute;
@@ -418,23 +380,25 @@ div.slide.third .slide-content .heading {
 }
 
 div.slide.third .slide-content .text {
-    font-size: 17px;
+    font-size: 15px;
     width: 50%;
     display: block;
     margin: 15px auto;
+    font-family: Gotham;
 }
 
 div.slide.four .slide-text {
     position: absolute;
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 32px;
     padding-left: 25px;
 }
 
 div.slide.four .slide-text span:last-child {
     display: block;
-    font-size: 18px;
+    font-size: 17px;
+    font-family: Gotham;
 }
 
 div.slide.five .slide-text {
@@ -446,7 +410,8 @@ div.slide.five .slide-text {
 }
 div.slide.five .slide-text span:last-child {
     display: block;
-    font-size: 23px;
+    font-size: 17px;
+    font-family: Gotham;
 }
 div.slide.five .slide-content {
     position: absolute;
@@ -575,11 +540,11 @@ div.update-form {
 }
 
 div.image-block-updates {
-    background-image: url(/img/car.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/car.png);
     background-size: 120%;
     background-repeat: no-repeat;
     background-position: left;
-    height: 300px;
+    height: 350px;
 }
 
 div.image-block-updates .image-text {
@@ -669,7 +634,7 @@ div.myPage-info .info-heading, .social-heading {
 }
 
 div.myPage-views {
-    background-image: url(/img/views.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/views.png);
     position: absolute;
     background-repeat: no-repeat;
     padding-left: 25px;
@@ -681,7 +646,7 @@ div.myPage-views {
 }
 
 a.myPage-stat {
-    background-image: url(/img/shape.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/shape.png);
     padding-left: 30px;
     color: white;
     background-repeat: no-repeat;
@@ -695,24 +660,28 @@ a.myPage-stat {
     line-height: 25px;
 }
 
-.myPage-friends {
-
+.myPage-friends,
+.myPage-places {
+    max-width: 235px;
 }
 
-.myPage-friends .headline{
+.myPage-friends .headline,
+.myPage-places .headline{
     font-family: IntroBold;
     text-transform: uppercase;
     color: white;
 }
 
-.myPage-friends a.all{
+.myPage-friends a.all,
+.myPage-places a.all {
     color: #dd9725;
     text-decoration: none;
     font-family: IntroBold;
     transition: all 0.3s;
 }
 
-.myPage-friends a.all:hover{
+.myPage-friends a.all:hover,
+.myPage-places a.all:hover {
     color: #fff;
     border-bottom: 1px dashed #dd9725;
     text-decoration: none;
@@ -729,9 +698,15 @@ a.myPage-stat {
     margin: 5px 0;
 }
 
-.myPage-friends .friends-list .friend-list_item img {
+.myPage-friends .friends-list .friend-list_item img,
+.myPage-places .places-list .places-list_item img {
     width: 45px;
     cursor: pointer;
+}
+
+.places-list_item {
+    margin: 5px 0;
+    text-align: center;
 }
 
 .myPage-friends .friends-list .friend-list_item .name {
@@ -776,6 +751,7 @@ img.tw{
 
 div.myPage-stat {
     padding: 10px 15px;
+    max-width: 235px;
 }
 
 .myPage-stat__text {
@@ -783,8 +759,8 @@ div.myPage-stat {
 }
 
 div.myPage-info span {
-    /*display: block;*/
-    /*color: white;*/
+    display: block;
+    color: white;
 }
 
 .myPage-info__name {
@@ -825,7 +801,25 @@ div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button {
     transition: all 0.3s;
 }
 
-div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button, div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.active {
+
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.people,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.people.active {
+    background-color: #286ed5;
+}
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.activity,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.activity.active {
+    background-color: #00ac40;
+}
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.media,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.media.active {
+    background-color: #d20040;
+}
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.places,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.places.active {
+    background-color: #e0a500;
+}
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.offers,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.offers.active {
     background-color: #db167e;
 }
 
@@ -840,14 +834,32 @@ div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button img {
     transition: all 0.3s;
 }
 
-div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button img, div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.active img {
-background-color: #ff53ae;
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.offers img,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.offers.active img {
+    background-color: #ff53ae;
+}
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.places img,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.places.active img {
+    background-color: #ffc011;
+}
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.media img,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.media.active img {
+    background-color: #ff014e;
+}
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.activity img,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.activity.active img {
+    background-color: #0dda59;
+}
+div.myPage-feed .feed-tabs .feed-tabs_tab:hover .tab-button.people img,
+div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button.people.active img {
+    background-color: #569aff;
 }
 div.myPage-feed .feed-tabs .feed-tabs_tab .tab-button span {
     margin-left: 5px;
     width: 35px;
     text-align: center;
     display: inline-block;
+    color: white;
 }
 
 div.myPage-feed .feed-content {
@@ -931,7 +943,7 @@ div.myPage-feed .feed-content .feed-content_box .people-tabs .people-tabs_tab.ac
 }
 
 #main.choose:before {
-    background-image: url(/img/pers-bg.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/pers-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -986,7 +998,7 @@ div.choose-blocks .choose-block .image-wrapper.min img.main {
     max-width: 140px;
     left: 50%;*/
 
-    max-width: 140px;
+    max-width: 150px;
     position: relative;
     bottom: -30px;
     max-height: 200px;
@@ -1115,7 +1127,7 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress
 }
 
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.blue {
-background: #22acf0;
+    background: #22acf0;
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.green {
     background:#00ecb7
@@ -1140,19 +1152,19 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress
 }
 
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.blue:before {
-    background-image:url("/img/users/light-blue.png");
+    background-image:url("http://bl.2dsd.ru/1/assets/img/users/light-blue.png");
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.green:before {
-    background-image:url("/img/users/light-green.png");
+    background-image:url("http://bl.2dsd.ru/1/assets/img/users/light-green.png");
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.yellow:before {
-    background-image:url("/img/users/light-yellow.png");
+    background-image:url("http://bl.2dsd.ru/1/assets/img/users/light-yellow.png");
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.red:before {
-    background-image:url("/img/users/light-red.png");
+    background-image:url("http://bl.2dsd.ru/1/assets/img/users/light-red.png");
 }
 div.choose-blocks .choose-block .choose-block__bars .choose-block__bar .progress-bar.purp:before {
-    background-image:url("/img/users/light-purp.png");
+    background-image:url("http://bl.2dsd.ru/1/assets/img/users/light-purp.png");
 }
 
 div.choose-blocks .choose-block .choose-block__bars .choose-block__icon {
@@ -1225,35 +1237,35 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__barWrapper {
 }
 .choose-block_more .choose-block_more-box .more-box__block.green{
     background: #00cc5f;
-    background-image: url(/img/users/bg-discounter.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-discounter.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more .choose-block_more-box .more-box__block.peach{
     background: #fc7568;
-    background-image: url(/img/users/bg-popular.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-popular.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more .choose-block_more-box .more-box__block.blue{
     background: #64a0ff;
-    background-image: url(/img/users/bg-rich.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-rich.png);
     background-size: contain;
     background-position: bottom left;
     background-repeat: no-repeat;
 }
 .choose-block_more .choose-block_more-box .more-box__block.dark{
     background: #252525;
-    background-image: url(/img/users/bg-luxury2.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-luxury2.png);
     background-size: cover;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more .choose-block_more-box .more-box__block.yellow{
     background: #ffb41a;
-    background-image: url(/img/users/bg-tourist.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-tourist.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -1261,28 +1273,28 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__barWrapper {
 
 .choose-block_more.company .choose-block_more-box .more-box__block.green{
     background: #00ca5f;
-    background-image: url(/img/users/bg-food.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-food.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more.company .choose-block_more-box .more-box__block.peach{
     background: #fc7568;
-    background-image: url(/img/users/bg-discounter.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-discounter.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
 }
 .choose-block_more.company .choose-block_more-box .more-box__block.blue{
     background: #64a0ff;
-    background-image: url(/img/users/bg-services2.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-services2.png);
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
 }
 .choose-block_more.company .choose-block_more-box .more-box__block.yellow{
     background: #ffb41a;
-    background-image: url(/img/users/bg-fun2.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/users/bg-fun2.png);
     background-size: contain;
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -1295,7 +1307,7 @@ div.choose-blocks .choose-block .choose-block__bars .choose-block__barWrapper {
 }
 
 #main.map:before {
-    background-image: url(/img/map-bg.png);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/map-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1342,11 +1354,11 @@ div.map-filter .map-filter__item.day-night span:last-child {
 }
 
 div.map-filter .icons {
- float: left;
+    float: left;
 }
 
 div.map-filter .icons span {
-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 div.map-filter .icons span img {
@@ -1356,11 +1368,11 @@ div.map-filter .icons span img {
 }
 
 div.map-filter .icons span:hover {
-cursor: pointer;
+    cursor: pointer;
 }
 
 div.map-filter .map-filter__item.search, div.friends-search {
-position: relative;
+    position: relative;
 }
 div.friends-search {
     background: #262a30;
@@ -1378,10 +1390,17 @@ div.friends-search input {
 }
 
 div.friends-page .updates-tabs span {
-font-size: 13px;
+    font-size: 13px;
 }
 div.friends-page .updates-tabs span:hover > span {
     color: white;
+}
+.friends-page_top .updates-tabs {
+    border-bottom: none;
+    margin-top: 30px;
+}
+.friends-page_top {
+    border-bottom: 2px solid #333333;
 }
 div.friends-page .friends-list {
 
@@ -1397,6 +1416,7 @@ div.settings-page .settings-list .settings-list_box{
 
 div.friends-page .friends-list .friends-list_item .friend-info_main {
     border-right: 1px solid;
+    padding: 0;
 }
 div.friends-page .friends-list .friends-list_item .friend-info_main .avatar {
     display: inline-block;
@@ -1435,7 +1455,7 @@ div.friends-page .friends-list .friends-list_item .friend-info_info span {
     color: white;
 }
 div.friends-page .friends-list .friends-list_item .friend-info_action {
-text-align: right;
+    text-align: right;
 }
 
 div.friends-page .friends-list .friends-list_item .friend-info_action .info-action_button {
@@ -1465,7 +1485,7 @@ div.settings-page .settings-menu .settings-menu_box {
 
 .friends-filter_block .option-primary input:checked + .checkbox,
 .list-box_settings .option-primary input:checked + .checkbox
- {
+{
     border-color: white;
 }
 
@@ -1580,7 +1600,7 @@ div.settings-page .settings-menu .settings-menu_box {
 }
 
 div.friends-page .updates-tabs span:last-child {
- margin:0;
+    margin:0;
 }
 
 div.map-filter .map-filter__item.search .filter-search{
@@ -1594,7 +1614,7 @@ div.map-filter .map-filter__item.search .filter-search__button, .friends-search_
     right: 10px;
     top: 50%;
     margin-top: -10px;
-    background: url(/img/users/search-icon.svg);
+    background: url(http://bl.2dsd.ru/1/assets/img/users/search-icon.svg);
     width: 20px;
     height: 20px;
     border: none;
@@ -1908,7 +1928,7 @@ div.tag-container span.tm-tag{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414959', endColorstr='#000000',GradientType=0 );
 }
 
-textarea.form-control {
+textarea.edit-text {
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(204, 204, 204, 0.3);
@@ -1917,7 +1937,7 @@ textarea.form-control {
     overflow: hidden;
 }
 
-select.form-control, input.form-control  {
+select.edit-select, input.edit-input  {
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(204, 204, 204, 0.3);
@@ -1933,17 +1953,16 @@ label.edit-upload {
 }
 
 label.edit-upload .button {
-    /*position: absolute;*/
+    position: absolute;
     right: 0;
     height: 100%;
-    /*width: 30%;*/
+    width: 30%;
     text-align: center;
     line-height: 30px;
     background: #414959;
     background: -webkit-gradient(linear, left top, left bottom, from(#414959), to(#000));
     background: linear-gradient(to bottom, #535c6e 0%, #343434 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414959', endColorstr='#000000',GradientType=0 );
-    display: block;
 }
 
 label.edit-upload input.gui-file {
@@ -1973,7 +1992,7 @@ button.edit-save {
     background: #23D6FE;
     background: linear-gradient(45deg, #54f 0%, #23D6FE 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe2387', endColorstr='#ff7618',GradientType=1 );
-    /*display: block;*/
+    display: block;
     border: none;
     padding: 10px 15px;
     text-align: center;
@@ -2146,11 +2165,11 @@ div.list-box_settings input.slider-countbox {
 }
 
 .notifications-list .notification-list_box .nl-box_user {
-
+    padding: 0;
 }
 
 .notifications-list .notification-list_box .nl-box_user .avatar {
-    max-width: 40px;
+    max-width: 45px;
     display: inline-block;
 }
 
@@ -2158,7 +2177,7 @@ div.list-box_settings input.slider-countbox {
     display: inline-block;
     vertical-align: top;
     color: white;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 .notifications-list .notification-list_box .nl-box_user .user-text .name {
@@ -2208,22 +2227,22 @@ div.list-box_settings input.slider-countbox {
 }
 
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-1 {
-    background-image: url(/img/notify/notify-1.svg);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/notify/notify-1.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-2 {
-    background-image: url(/img/notify/notify-2.svg);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/notify/notify-2.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-3 {
-    background-image: url(/img/notify/notify-3.svg);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/notify/notify-3.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-4 {
-    background-image: url(/img/notify/notify-4.svg);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/notify/notify-4.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-5 {
-    background-image: url(/img/notify/notify-5.svg);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/notify/notify-5.svg);
 }
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box.notify-6 {
-    background-image: url(/img/notify/notify-6.svg);
+    background-image: url(http://bl.2dsd.ru/1/assets/img/notify/notify-6.svg);
 }
 
 .notifications-list .notification-list_box .nl-box_action .action-item .action-item_box span {
@@ -2231,24 +2250,54 @@ div.list-box_settings input.slider-countbox {
     line-height: 25px;
 }
 
-.cropper-image-block {
-    min-height: 382px;
+.choose-gender {
+    margin: 20px 0;
 }
 
-.cropper-update-area {
-    position: absolute;
-    background: #262a30;
-    z-index: 1;
-    left: 0;
-    top: 0;
+.choose-gender label[for="male"] {
+    margin-right: 0;
+}
+
+.choose-gender input {
     display: none;
 }
 
-.thumbnail {
-    padding: 0;
-    border-width: 0;
-    border-radius: 10px;
+.choose-gender_box {
+    width: 115px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 0;
+    background: #333333;
+    border-radius: 100px;
 }
+
+.choose-gender label {
+    display: inline-block;
+    vertical-align: middle;
+    background: #686868;
+    padding: 5px;
+    border: 2px solid #686868;
+    width: 35px;
+    margin-right: 15px;
+    margin-bottom: 0;
+    cursor: pointer;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.choose-gender .gender-span label img {
+
+}
+
+.choose-gender [type="radio"]:checked + label{
+    background-image: linear-gradient(224deg, #fe2387 0%, #ff7618 100%);
+    border: 2px solid white;
+}
+
+.myPage-bluredImg {
+    display: none;
+}
+
 
 
 /*********************************/
@@ -2257,6 +2306,10 @@ div.list-box_settings input.slider-countbox {
 @media (min-width: 320px) and (max-width: 768px) {
     div.update-form {
         margin-top: 0px;
+    }
+
+    .choose-block {
+        margin: 15px auto;
     }
 
     div.image-block-updates {
@@ -2337,7 +2390,7 @@ div.list-box_settings input.slider-countbox {
     }
 
     div.slide.first {
-        background-image: url('/img/mobile-first.jpg');
+        background-image: url('http://bl.2dsd.ru/1/assets/img/mobile-first.jpg');
         height: 730px;
         width: 100%;
         background-size: 150%;
@@ -2354,7 +2407,7 @@ div.list-box_settings input.slider-countbox {
     }
 
     div.slide.second {
-        background-image: url('/img/mobile-two.jpg');
+        background-image: url('http://bl.2dsd.ru/1/assets/img/mobile-two.jpg');
         height: 410px;
         top: auto;
         width: 100%;
@@ -2418,7 +2471,7 @@ div.list-box_settings input.slider-countbox {
     }
 
     div.slide.third {
-        /*background-image: url('/img/mobile-three.jpg');*/
+        /*background-image: url('http://bl.2dsd.ru/1/assets/img/mobile-three.jpg');*/
         height: 435px;
         margin-top: 30px;
         top: auto;
@@ -2488,11 +2541,12 @@ div.list-box_settings input.slider-countbox {
         font-family: "IntroBold";
         font-size: 15px;
         letter-spacing: 0.56px;
+        width: 100%;
     }
 
 
     div.slide.four {
-        background-image: url('/img/mobile-four.jpg');
+        background-image: url('http://bl.2dsd.ru/1/assets/img/mobile-four.jpg');
         height: 350px;
         width: 100%;
         top: auto;
@@ -2523,7 +2577,7 @@ div.list-box_settings input.slider-countbox {
     }
 
     div.slide.five {
-        background-image: url('/img/mobile-five.jpg');
+        background-image: url('http://bl.2dsd.ru/1/assets/img/mobile-five.jpg');
         height: 260px;
         margin-top: 50px;
         width: 100%;
@@ -2536,7 +2590,8 @@ div.list-box_settings input.slider-countbox {
         padding: 7px 30px;
     }
     div.slide.five div.slide-text {
-        top: -5px;
+        top: -15px;
+        text-shadow: 0 0 10px #000;
     }
     div.slide.five div.slide-content {
         text-align: center;
@@ -2613,7 +2668,7 @@ div.list-box_settings input.slider-countbox {
 
     div.friends-page .friends-list .friends-list_item .friend-info_main .avatar {
         margin-right: 5px;
-        width: 35px;
+        width: 45px;
     }
 
     div.top-page .updates-tabs span {
@@ -2645,5 +2700,23 @@ div.list-box_settings input.slider-countbox {
 
     div.friends-page .friends-list .friends-list_item .friend-info_action .info-action_button:last-child {
         margin-top: 5px;
+    }
+}
+
+@media (min-width: 1720px) {
+    div.slide.second .slide-text {
+        position: absolute;
+        top: 85px;
+        left: 165px;
+        font-size: 36px;
+    }
+    div.slide.third .slide-text {
+        top: 95px;
+    }
+}
+
+@media (min-width: 1890px) {
+    .myPage-bluredImg {
+        display: block;
     }
 }
