@@ -312,14 +312,7 @@ AppAsset::register($this);
                     </a>
                 </li>
 
-                <li>
-                    <a href="#">
-                        <span>
-                        <img src="<?= Yii::getAlias('@static') ?>/img/left-nav/star.svg" alt="">
-                        </span>
-                        <span class="sidebar-title">Лучшие места</span>
-                    </a>
-                </li>
+
                 <li>
                     <a href="#">
                         <span>
@@ -328,14 +321,7 @@ AppAsset::register($this);
                         <span class="sidebar-title">Возможности</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <span>
-                        <img src="<?= Yii::getAlias('@static') ?>/img/left-nav/diamond.svg" alt="">
-                        </span>
-                        <span class="sidebar-title">Вознаграждения</span>
-                    </a>
-                </li>
+
                 <li>
                     <a href="http://bl.2dsd.ru/new/updates.html">
                         <span>
@@ -415,7 +401,7 @@ AppAsset::register($this);
     <section id="content_wrapper">
 
         <!-- Begin: Content -->
-        <section id="content" class="animated">
+        <section id="content" class="animated pbn">
 
             <?= Alert::widget() ?>
 
