@@ -323,7 +323,7 @@ AppAsset::register($this);
                 </li>
 
                 <li>
-                    <a href="http://bl.2dsd.ru/new/updates.html">
+                    <a href="<?= Url::to(['site/contact'])?>">
                         <span>
                             <img src="<?= Yii::getAlias('@static') ?>/img/left-nav/chat.svg" alt="">
                         </span>
