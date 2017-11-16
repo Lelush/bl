@@ -43,8 +43,8 @@ $this->title = 'BL';
                   BEST LOCATIONS
                 </span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop_3.png"/>
-
+            <img class="video-img hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop_3.png"/>
+            <span id="videoPop-up" class="hidden-xs hidden-sm"></span>
             <div class="video-mobile hidden-md hidden-lg">
                 <video id="video1" src="<?=Yii::getAlias('@static')?>/video.mov"></video>
                 <button id="play-Pause"><i id="pP-icon" class="fa fa-play" aria-hidden="true"></i></button>
@@ -87,7 +87,7 @@ $this->title = 'BL';
             </div>
             <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop/desktop-5-new.png"/>
             <div class="slide-content">
-                <a class="bl_button" href="#">Начать</a>
+                <a class="bl_button" href="<?= Url::to(['/site/signup'])?>">Начать</a>
             </div>
         </div>
 
