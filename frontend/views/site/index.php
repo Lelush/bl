@@ -13,8 +13,8 @@ $this->title = 'BL';
                 <span>Социальная сеть</span>
                 <span>нового поколения</span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/sl1de.png">            </div>
-    </div>
+            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/sl1de.png">
+        </div>
 
         <div class="col-md-12 col-xs-12 slide second">
             <div class="slide-text">
@@ -43,7 +43,7 @@ $this->title = 'BL';
                   BEST LOCATIONS
                 </span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop/desktop-3.jpg"/>
+            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop_3.png"/>
 
             <div class="video-mobile hidden-md hidden-lg">
                 <video id="video1" src="<?=Yii::getAlias('@static')?>/video.mov"></video>
