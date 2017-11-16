@@ -200,7 +200,7 @@ AppAsset::register($this);
             </ul>
         </li>
         <li class="top-people hidden-xs">
-            <a href="#" class="fw600 p15">
+            <a href="#" class="fw600 p10">
                 <img src="<?= Yii::getAlias('@static') ?>/img/top-people/top.svg" alt="" style="margin-right: 15px">
                 <img src="/img/avatars/1.jpg" alt="avatar" class="mw40 br64 mr15">
                 <img src="/img/avatars/1.jpg" alt="avatar" class="mw40 br64 mr15">

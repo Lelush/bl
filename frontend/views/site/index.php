@@ -13,7 +13,7 @@ $this->title = 'BL';
                 <span>Социальная сеть</span>
                 <span>нового поколения</span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/1/assets/img/sl1de.png">            </div>
+            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/sl1de.png">            </div>
     </div>
 
         <div class="col-md-12 col-xs-12 slide second">
@@ -25,7 +25,7 @@ $this->title = 'BL';
                   Получай от жизни все
                 </span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-2.jpg"/>
+            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop/desktop-2.jpg"/>
             <div class="slide-content">
 				<span class="heading">
 					Выбери кто ты
@@ -37,13 +37,13 @@ $this->title = 'BL';
             </div>
         </div>
 
-        <div class="col-md-12 col-xs-12 slide third">
+        <div class="col-md-12 col-xs-12 slide third mb20">
             <div class="slide-text">
                 <span>
                   BEST LOCATIONS
                 </span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-3.jpg"/>
+            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop/desktop-3.jpg"/>
 
             <div class="video-mobile hidden-md hidden-lg">
                 <video id="video1" src="<?=Yii::getAlias('@static')?>/video.mov"></video>
@@ -64,7 +64,7 @@ $this->title = 'BL';
             </div>
         </div>
 
-        <div class="col-md-12 col-xs-12 slide four">
+        <div class="col-md-12 col-xs-12 slide four mt20">
             <div class="slide-text">
                 <span>
                   Гид по городу
@@ -73,7 +73,7 @@ $this->title = 'BL';
                   Расскажет, куда сходить и как на этом заработать
                 </span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-4.jpg"/>
+            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop/desktop-4.jpg"/>
         </div>
 
         <div class="col-md-12 col-xs-12 slide five">
@@ -85,7 +85,7 @@ $this->title = 'BL';
                   Зарабатывайте, получайте скидки и становитесь популярнее
                 </span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://bl.2dsd.ru/old/images/desktop/desktop-5.jpg"/>
+            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop/desktop-5-new.jpg"/>
             <div class="slide-content">
                 <a class="bl_button" href="#">Начать</a>
             </div>
