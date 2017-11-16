@@ -85,7 +85,7 @@ $this->title = 'BL';
                   Зарабатывайте, получайте скидки и становитесь популярнее
                 </span>
             </div>
-            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop/desktop-5-new.jpg"/>
+            <img class="hidden-xs hidden-sm" src="http://static.blrevolution.com/img/desktop/desktop-5-new.png"/>
             <div class="slide-content">
                 <a class="bl_button" href="#">Начать</a>
             </div>
