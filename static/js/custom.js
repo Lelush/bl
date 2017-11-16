@@ -11,6 +11,61 @@
     Core.init();
 
 
+    var myVideo = document.getElementById("video1");
+    var myVideoPC = document.getElementById("video2");
+
+    $(document).on('click', '#videoPop-up', function () {
+        $('.video-overlay').addClass('active');
+    });
+
+    $(document).on('click', '#videoPop-up_close', function () {
+        if (myVideoPC.played) {
+            myVideoPC.pause();
+        }
+
+        if($('#pP-icon2').hasClass('fa fa-play')) {
+            $('#pP-icon2').removeClass('fa fa-play').addClass('fa fa-pause');
+        } else {
+            $('#pP-icon2').removeClass('fa fa-pause').addClass('fa fa-play');
+        }
+        $('.video-overlay').removeClass('active');
+    });
+
+    function playPause() {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+
+    function playPause2() {
+        if (myVideoPC.paused)
+            myVideoPC.play();
+        else
+            myVideoPC.pause();
+    }
+
+    $(document).on('click', '#play-Pause', function () {
+        playPause();
+
+        if($('#pP-icon').hasClass('fa fa-play')) {
+            $('#pP-icon').removeClass('fa fa-play').addClass('fa fa-pause');
+        } else {
+            $('#pP-icon').removeClass('fa fa-pause').addClass('fa fa-play');
+        }
+    });
+
+    $(document).on('click', '#play-Pause2', function () {
+        playPause2();
+
+        if($('#pP-icon2').hasClass('fa fa-play')) {
+            $('#pP-icon2').removeClass('fa fa-play').addClass('fa fa-pause');
+        } else {
+            $('#pP-icon2').removeClass('fa fa-pause').addClass('fa fa-play');
+        }
+    });
+
+
     $(document).on('click', '.tab-button', function (e) {
         $('.tab-button').removeClass('active');
         $(this).addClass('active');
