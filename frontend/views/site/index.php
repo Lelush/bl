@@ -6,7 +6,7 @@ $this->title = 'BL';
 ?>
 <div class="admin-panels">
 
-
+    <div class="row mobile-margin0">
 
         <div class="col-md-12 col-xs-12 slide first">
             <div class="slide-text hidden-md hidden-lg">
@@ -91,7 +91,7 @@ $this->title = 'BL';
             </div>
         </div>
 
-    
+    </div>
 
 
 </div>

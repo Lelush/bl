@@ -2303,6 +2303,11 @@ div.list-box_settings input.slider-countbox {
 /********* RESPONSIVE ************/
 /*********************************/
 @media (min-width: 320px) and (max-width: 768px) {
+    .mobile-margin0 {
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
+    
     div.update-form {
         margin-top: 0px;
     }
