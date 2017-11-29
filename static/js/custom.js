@@ -7,6 +7,38 @@
 // 
 
 (function($) {
+
+
+    window.Profile = (function(){
+            return {
+                toggleFriend: function(button, id){
+                    var param = yii.getCsrfParam();
+                    var data = {
+                        id:id
+                    };
+                    data[param] = yii.getCsrfToken();
+                   $.ajax({
+                       dataType: 'json',
+                       method: 'POST',
+                       url:'/users/toggle-friends.html',
+                       data: data,
+                       success: function(response) {
+                           if(response.success) {
+                               $(button).text(response.btnText);
+                           } else {
+                               console.error(response);
+                           }
+                       },
+                       error: function(response) {
+                           console.error(response);
+                       }
+                   })
+                }
+            }
+    })();
+
+
+
     // Init Theme Core
     Core.init();
 

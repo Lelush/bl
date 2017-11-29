@@ -1,6 +1,7 @@
 <?php
 namespace common\models;
 
+use common\enums\FriendsStatus;
 use common\enums\Role;
 use common\enums\UserStatus;
 use common\helpers\HDates;
@@ -39,6 +40,7 @@ use yii\web\IdentityInterface;
  *
  * @property Company $company
  * @property UserInfo $userInfo
+ * @property User[] $friendUsers
  *
  * @property User            owner
  *  *
@@ -133,6 +135,36 @@ class User extends ActiveRecord implements IdentityInterface
     public function getUserInfo()
     {
         return $this->hasOne(UserInfo::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getNotFriendUsers()
+    {
+        return self::find()
+            ->leftJoin(Friends::tableName(), 'id = friend_to OR id = friend_from')
+            ->andWhere([User::tableName().'.status'=>UserStatus::ACTIVE,'role'=>Role::USER])
+            ->andWhere(['not',['id'=>$this->getId()]])
+            ->andWhere(['or',['friends.status'=>null],['friends.status'=>FriendsStatus::DELETE]])
+//            ->limit(6)
+            ->orderBy(new Expression('RANDOM()'));
+    }
+
+    public function getFriendUsers()
+    {
+        $query =  User::findBySql('
+            SELECT DISTINCT "user".* FROM "user", "friends" WHERE 
+            CASE
+            WHEN friend_to = :id
+            THEN friend_from = id
+            WHEN friend_from = :id
+            THEN friend_to = id
+            END
+        ',[':id' => $this->getId()]);
+        $query->multiple = true;
+
+        return $query;
     }
 
     /**

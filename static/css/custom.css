@@ -898,7 +898,7 @@ div.myPage-feed .feed-content .feed-content_box .people-tabs .people-tabs_tab.ac
     background: #ffffff;
     padding: 10px;
     border-radius: 10px;
-    margin: 5px 10px;
+    /*margin: 5px 10px;*/
     margin-left: 0;
 }
 
@@ -931,12 +931,13 @@ div.myPage-feed .feed-content .feed-content_box .people-tabs .people-tabs_tab.ac
     background: linear-gradient(45deg, #54f 0%, #23D6FE 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe2387', endColorstr='#ff7618',GradientType=1 );
     margin-top: 10px;
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     color: white;
     border: none;
     padding: 8px 5px;
     font-size: 12px;
     border-radius: 5px;
+    width: 100%;
 }
 
 #people-tab {
@@ -2298,6 +2299,25 @@ div.list-box_settings input.slider-countbox {
 
 .myPage-bluredImg {
     display: none;
+}
+
+.cropper-image-block {
+    min-height: 382px;
+}
+
+.cropper-update-area {
+    position: absolute;
+    background: #262a30;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.thumbnail {
+    padding: 0;
+    border-width: 0;
+    border-radius: 10px;
 }
 
 

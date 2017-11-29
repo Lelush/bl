@@ -36,6 +36,7 @@ class AppAsset extends AssetBundle
         'frontend\assets\DataTablesAsset',
         'frontend\assets\DateTimePickerAsset',
         'frontend\assets\BootstrapConfirmationAsset',
+        'yii\web\YiiAsset',
 //        'yii\bootstrap\BootstrapAsset',
     ];
 }

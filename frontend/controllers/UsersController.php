@@ -2,15 +2,18 @@
 namespace frontend\controllers;
 
 use common\enums\BalanceOperation;
+use common\enums\FriendsStatus;
 use common\enums\Role;
 use common\enums\UserStatus;
 use common\helpers\HDev;
 use common\models\BalanceHistory;
 use common\models\Company;
+use common\models\Friends;
 use common\models\User;
 use common\models\UserInfo;
 use frontend\components\Controller;
 use frontend\models\ChangeBalance;
+use frontend\models\FriendsForm;
 use frontend\models\UserAdminForm;
 use frontend\models\UserAdvertiserFilter;
 use frontend\models\UserAdvertiserForm;
@@ -21,6 +24,7 @@ use frontend\models\UserPartnerForm;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\bootstrap\ActiveForm;
+use yii\db\Expression;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
@@ -60,7 +64,7 @@ class UsersController extends Controller
                         'allow'   => true,
                         'roles'   => ['@'],
                     ],[
-                        'actions' => ['my-page','edit','uploadPhoto'],
+                        'actions' => ['my-friends','friends','my-page','edit','uploadPhoto', 'toggle-friends'],
                         'allow'   => true,
                         'roles'   => [
                             Role::COMPANY,
@@ -127,10 +131,41 @@ class UsersController extends Controller
         return $this->actionView(Yii::$app->user->getIdentity()->id);
     }
 
+    public function actionToggleFriends()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $userOwner = Yii::$app->getUser()->getIdentity();
+        $friendId = Yii::$app->getRequest()->post('id');
+
+        $friend = Friends::find()->where(['friend_from'=>$userOwner->getId(), 'friend_to'=>$friendId])->one();
+
+        if(!$friend) {
+            $friend = new Friends();
+            $friend->friend_from = $userOwner->getId();
+            $friend->friend_to = $friendId;
+        }
+
+        if(!$friend->status && !$friend->isNewRecord) {
+            $friend->status = FriendsStatus::DELETE;
+        } else {
+            $friend->status = FriendsStatus::WAIT;
+        }
+
+        if($friend->save()) {
+            return ['success'=>true, 'btnText'=>$friend->status == FriendsStatus::DELETE ? 'Пригласить' : 'Отменить'];
+        }
+
+        return ['errors'=>$friend->getErrors(),'message'=>'Что-то пошло не так', ];
+    }
+
     public function actionView($id)
     {
         $model = $this->findUser($id);
         $userOwner = Yii::$app->user->getIdentity();
+        $users = $model
+            ->getNotFriendUsers()
+            ->limit(6)
+            ->all();
 //        $isAdmin = Yii::$app->user->can(Role::ADMIN);
 
         if ($model->load(Yii::$app->request->post())) {
@@ -160,7 +195,7 @@ class UsersController extends Controller
             }
         }
 
-        return $this->render('view', compact('model', 'userOwner'));
+        return $this->render('view', compact('model', 'userOwner', 'users'));
     }
 
 
@@ -194,5 +229,30 @@ class UsersController extends Controller
         return $this->render('edit', compact('model', 'userOwner'));
     }
 
+    /**
+     *   метод посредник для просмотра пользователем себя самого.
+     * @return string
+     */
+    public function actionMyFriends(){
+        return $this->actionFriends(Yii::$app->user->getIdentity()->id);
+    }
 
+    public function actionFriends($id)
+    {
+        $model = $this->findUser($id);
+        $userOwner = Yii::$app->user->getIdentity();
+//        $isAdmin = Yii::$app->user->can(Role::ADMIN);
+
+        $searchModel = new FriendsForm();
+        $dataProvider = $searchModel->search($model,Yii::$app->request->queryParams);
+
+        return $this->render('friends', [
+            'isOwner' => $userOwner->getId() == $model->id,
+            'model' => $model,
+            'userOwner' => $userOwner,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+
+    }
 }

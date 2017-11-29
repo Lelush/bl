@@ -15,7 +15,7 @@ class m171112_200637_Friends extends Migration
         $this->createTable('{{%friends}}',[
             'friend_from' => $this->integer()->notNull(),
             'friend_to' => $this->integer()->notNull(),
-            'status' => $this->integer(),
+            'status' => $this->integer()->defaultValue(0),
             'created_at' => $this->dateTime()->notNull(),
         ]);
 
