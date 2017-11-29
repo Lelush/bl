@@ -1,33 +1,18 @@
 <?php
 namespace frontend\controllers;
 
-use common\enums\BalanceOperation;
 use common\enums\FriendsStatus;
 use common\enums\Role;
-use common\enums\UserStatus;
-use common\helpers\HDev;
-use common\models\BalanceHistory;
-use common\models\Company;
 use common\models\Friends;
 use common\models\User;
-use common\models\UserInfo;
 use frontend\components\Controller;
-use frontend\models\ChangeBalance;
 use frontend\models\FriendsForm;
-use frontend\models\UserAdminForm;
-use frontend\models\UserAdvertiserFilter;
-use frontend\models\UserAdvertiserForm;
-use frontend\models\UserEmployeeForm;
 use frontend\models\UserForm;
-use frontend\models\UserPartnerFilter;
-use frontend\models\UserPartnerForm;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\bootstrap\ActiveForm;
-use yii\db\Expression;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Url;
 use yii\web\Response;
 
 /**
@@ -60,11 +45,12 @@ class UsersController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['view'],
+                        'actions' => ['my-friends','friends','my-page','view'],
                         'allow'   => true,
                         'roles'   => ['@'],
-                    ],[
-                        'actions' => ['my-friends','friends','my-page','edit','uploadPhoto', 'toggle-friends'],
+                    ],
+                    [
+                        'actions' => ['edit','uploadPhoto', 'toggle-friends'],
                         'allow'   => true,
                         'roles'   => [
                             Role::COMPANY,
