@@ -156,7 +156,6 @@ class SiteController extends Controller
                 $this->setFlash('danger', 'Произошла ошибка, проверьте данные');;
             }
 
-            var_dump($model->attributes);
         }
 
         return $this->render('contact', [

@@ -57,7 +57,9 @@ class Controller extends \yii\web\Controller
         if($user && !in_array($action->id,$aNoViewBlockActions) && $user->status == UserStatus::DELETED){
             return $this->redirect(Url::to('/site/block'));
         }
-        if( empty(Yii::$app->getUser()->getIdentity()->role) && $action->id != 'choose' ) {
+        if( empty(Yii::$app->getUser()->getIdentity()->role) && in_array($action->id, [
+            'my-friends','friends','my-page'
+            ]) ) {
             $this->redirect(['/site/choose']);
             Yii::$app->end();
         }
