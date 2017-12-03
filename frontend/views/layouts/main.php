@@ -44,7 +44,7 @@ AppAsset::register($this);
 </div>
 
 <!-- Start: Main -->
-<div id="main">
+<div id="main" class="<?= Yii::$app->controller->action->id;?>">
 
     <!-- Start: Header -->
     <?php
