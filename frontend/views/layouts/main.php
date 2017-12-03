@@ -275,12 +275,15 @@ AppAsset::register($this);
                         <span class="sidebar-title">Новости</span>
                     </a>
                 </li>
+                <? if(!Yii::$app->getUser()->getIsGuest()): ?>
                 <li>
-                    <a href="#">
+                    <a href="<?= Url::to(['/users/my-friends'])?>">
                         <span><img src="<?= Yii::getAlias('@static') ?>/img/left-nav/user.svg" alt=""></span>
                         <span class="sidebar-title">Друзья</span>
                     </a>
                 </li>
+                <? endif; ?>
+                <? if(false):?>
                 <li>
                     <a href="#">
                         <span>
@@ -289,6 +292,8 @@ AppAsset::register($this);
                         <span class="sidebar-title">Сообщения</span>
                     </a>
                 </li>
+                <? endif; ?>
+                <? if(!Yii::$app->getUser()->getIsGuest()):?>
                 <li>
                     <a href="#">
                         <span>
@@ -300,11 +305,12 @@ AppAsset::register($this);
                         </span>
                     </a>
                 </li>
+                <? endif; ?>
 
                 <hr/>
 
                 <li>
-                    <a href="#">
+                    <a href="<?= Url::to(['/site/map'])?>">
                         <span>
                         <img src="<?= Yii::getAlias('@static') ?>/img/left-nav/marker.svg" alt="">
                         </span>
@@ -313,6 +319,7 @@ AppAsset::register($this);
                 </li>
 
 
+                <? if(false):?>
                 <li>
                     <a href="#">
                         <span>
@@ -321,6 +328,7 @@ AppAsset::register($this);
                         <span class="sidebar-title">Возможности</span>
                     </a>
                 </li>
+                <? endif; ?>
 
                 <li>
                     <a href="<?= Url::to(['site/contact'])?>">
@@ -333,20 +341,24 @@ AppAsset::register($this);
 
                 <hr/>
 
+                <? if(false):?>
                 <li>
                     <a href="#">
                         <span><img src="<?= Yii::getAlias('@static') ?>/img/left-nav/plus.svg" alt=""></span>
                         <span class="sidebar-title">Пригласить друга</span>
                     </a>
                 </li>
+                <? endif; ?>
+                <? if(!Yii::$app->getUser()->getIsGuest()): ?>
                 <li>
-                    <a href="#">
+                    <a href="<?= Url::to(['/users/settings'])?>">
                         <span><img src="<?= Yii::getAlias('@static') ?>/img/left-nav/settings.svg" alt=""></span>
                         <span class="sidebar-title">Настройки</span>
                     </a>
                 </li>
+                <? endif;?>
                 <li>
-                    <a href="http://bl.2dsd.ru/new/terms.html">
+                    <a href="<?= Url::to(['/site/terms'])?>">
                         <span><img src="<?= Yii::getAlias('@static') ?>/img/left-nav/docs.svg" alt=""></span>
                         <span class="sidebar-title">Правила</span>
                     </a>
@@ -362,6 +374,7 @@ AppAsset::register($this);
                 </li>
                 <? endif; ?>
 
+                <? if(false):?>
                 <!-- sidebar progress bars -->
                 <li class="sidebar-stat hidden">
                     <a href="#projectOne" class="fs11">
@@ -389,6 +402,7 @@ AppAsset::register($this);
                         </div>
                     </a>
                 </li>
+                <? endif; ?>
             </ul>
             <!-- End: Sidebar Menu -->
         </div>
