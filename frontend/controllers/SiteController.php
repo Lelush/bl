@@ -221,6 +221,17 @@ class SiteController extends Controller
     }
 
     /**
+     * Signs user up.
+     *
+     * @return mixed
+     */
+    public function actionMap()
+    {
+        return $this->render('map', [
+        ]);
+    }
+
+    /**
      * @return mixed
      */
     public function actionCompany()
