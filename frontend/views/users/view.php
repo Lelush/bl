@@ -63,8 +63,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
         </div>
+        <? endif; ?>
     </div>
-    <? endif; ?>
 
     <div class="col-md-9 col-lg-9 col-xs-12">
         <div class="row myPage-block myPage-info">
