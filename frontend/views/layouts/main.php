@@ -412,10 +412,10 @@ AppAsset::register($this);
     <!-- End: Sidebar Left -->
 
     <!-- Start: Content-Wrapper -->
-    <section id="content_wrapper" class="<?= Yii::$app->controller->action->id;?>">
+    <section id="content_wrapper" class="<?= Yii::$app->controller->action->id;?>Page">
 
         <!-- Begin: Content -->
-        <section id="content" class="animated pbn <?= Yii::$app->controller->action->id;?>">
+        <section id="content" class="animated pbn <?= Yii::$app->controller->action->id;?>Page">
 
             <?= Alert::widget() ?>
 
