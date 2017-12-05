@@ -44,16 +44,15 @@ JS
                     'uploadUrl' => Url::toRoute('/users/uploadPhoto'),
                     'noPhotoImage' => Yii::getAlias('@static/images/user/default_avatar.jpg'),
                     'pluginOptions' =>[
-                        'aspectRatio' => 186/382
+                        'aspectRatio' => 1
                     ],
                     'thumbnailWidth' => 186,
-                    'cropAreaWidth' => 231,
-                    'thumbnailHeight' => 382,
-                    'cropAreaHeight' => 382,
+                    'thumbnailHeight' => 186,
+                    'cropAreaWidth' => 372,
+                    'cropAreaHeight' => 372,
                     'width' => 186,
-                    'height' => 382,
+                    'height' => 186,
                     'onCompleteJcrop' => 'function(imgName, response, widget){
-                        console.log(arguments, "test");
                         $(widget).find(".edit-upload").click();
                         
                     }'
