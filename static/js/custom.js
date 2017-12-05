@@ -147,6 +147,34 @@
         return false;
     });
 
+    $(document).on('click', '#add-company', function () {
+        /*$(this).fadeOut('fast');
+         $('#add-close').fadeIn();*/
+        $(this).removeClass('add').addClass('add-close');
+        $('#addCompany-wrapper').fadeIn();
+    });
+
+    $(document).on('click', '.add-close', function () {
+        /*$(this).fadeOut('fast');
+         $('#addCompany-wrapper').fadeOut('fast');*/
+        $(this).removeClass('add-close').addClass('add');
+        $('#addCompany-wrapper').fadeOut();
+    });
+
+    $(document).on('click', '#cb-showAll', function () {
+        $('.map-companyBox').animate({height: "100%"}, 1000).addClass('opened');
+        $('.map-filter').addClass('opened');
+        $('.blured').hide();
+        $('#showAll-close').show();
+    });
+
+    $(document).on('click', '#showAll-close', function () {
+        $('.map-companyBox').animate({height: "210px"}, 0).removeClass('opened');
+        $('.map-filter').removeClass('opened');
+        $('.blured').show();
+        $(this).hide();
+    });
+
     // Init Widget Demo JS
     // demoHighCharts.init();
 
