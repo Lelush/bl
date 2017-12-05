@@ -37,19 +37,19 @@
                 </div>
                 <div class="icons">
                   <span class="map-filter__item">
-                    <img src="http://bl.2dsd.ru/new/assets/img/users/filter_1.svg"/>
+                    <img src="http://bl.2dsd.ru/1/assets/img/users/filter_1.svg"/>
                   </span>
                     <span class="map-filter__item">
-                    <img src="http://bl.2dsd.ru/new/assets/img/users/filter_2.svg"/>
+                    <img src="http://bl.2dsd.ru/1/assets/img/users/filter_2.svg"/>
                   </span>
                     <span class="map-filter__item">
-                    <img src="http://bl.2dsd.ru/new/assets/img/users/filter_3.svg"/>
+                    <img src="http://bl.2dsd.ru/1/assets/img/users/filter_3.svg"/>
                   </span>
                     <span class="map-filter__item">
-                    <img src="http://bl.2dsd.ru/new/assets/img/users/filter_4.svg"/>
+                    <img src="http://bl.2dsd.ru/1/assets/img/users/filter_4.svg"/>
                   </span>
                     <span class="map-filter__item">
-                    <img src="http://bl.2dsd.ru/new/assets/img/users/filter_5.svg"/>
+                    <img src="http://bl.2dsd.ru/1/assets/img/users/filter_5.svg"/>
                   </span>
                 </div>
                 <div class="map-filter__item search">
@@ -58,8 +58,8 @@
                 </div>
             </form>
             <button id="add-company" class="map-filter__item add">
-                <img class="closed" src="http://bl.2dsd.ru/new/assets/img/users/add-icon.svg"/>
-                <img class="opened" src="http://bl.2dsd.ru/new/assets/img/users/close-icon.png"/>
+                <img class="closed" src="http://bl.2dsd.ru/1/assets/img/users/add-icon.svg"/>
+                <img class="opened" src="http://bl.2dsd.ru/1/assets/img/users/close-icon.png"/>
                 <span class="closed">
                   Добавить
                 </span>
@@ -74,7 +74,7 @@
                 </span>
             </button>
             <!--<button id="add-close" class="map-filter__item add-close">
-              <img src="http://bl.2dsd.ru/new/assets/img/users/close-icon.png"/>
+              <img src="http://bl.2dsd.ru/1/assets/img/users/close-icon.png"/>
               Закрыть
             </button>-->
         </div>
@@ -112,7 +112,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -121,26 +121,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -151,7 +151,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -160,26 +160,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -190,7 +190,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -199,26 +199,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -229,7 +229,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -238,26 +238,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -268,7 +268,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -277,26 +277,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -307,7 +307,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item blured">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/show-more.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/show-more.png"/>
                     </div>
                     <div id="cb-showAll" class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -326,7 +326,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item showAll">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -335,26 +335,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -365,7 +365,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item showAll">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -374,26 +374,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -404,7 +404,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item showAll">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -413,26 +413,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -443,7 +443,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item showAll">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -452,26 +452,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
@@ -482,7 +482,7 @@
             <div class="col-md-2 col-lg-2 col-xs-12 map-companyBox__item showAll">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xs-12 item-avatar">
-                        <img class="center-block" src="http://bl.2dsd.ru/new/assets/img/users/company-avatar.png"/>
+                        <img class="center-block" src="http://bl.2dsd.ru/1/assets/img/users/company-avatar.png"/>
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-heading">
                     <span>
@@ -491,26 +491,26 @@
                     </div>
                     <div class="col-md-12 col-lg-12 col-xs-12 item-actions">
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-like.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-like.svg"/>
                             <span>
                         1560
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-share.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-share.svg"/>
                             <span>
                         520
                       </span>
                         </div>
                         <div class="col-md-4 col-lg-4 col-xs-4 item-actions_action">
-                            <img src="http://bl.2dsd.ru/new/assets/img/users/action-relate.svg"/>
+                            <img src="http://bl.2dsd.ru/1/assets/img/users/action-relate.svg"/>
                             <span>
                         315
                       </span>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-5 col-xs-5 item-rating">
-                        <img src="http://bl.2dsd.ru/new/assets/img/users/rating-star.svg"/>
+                        <img src="http://bl.2dsd.ru/1/assets/img/users/rating-star.svg"/>
                         <span>
                       1560
                     </span>
