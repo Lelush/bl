@@ -67,11 +67,22 @@ class UploadAction extends Action
                 $width = $request->post('width', $this->width);
                 $height = $request->post('height', $this->height);
 
+                $x =$request->post('x');
+                $y =$request->post('y');
+
+                if($x < 0) {
+                    $x = 0;
+                }
+
+                if($y < 0) {
+                    $y = 0;
+                }
+
                 $image = Image::crop(
                     $file->tempName . $request->post('filename'),
                     intval($request->post('w')),
                     intval($request->post('h')),
-                    [$request->post('x'), $request->post('y')]
+                    [$x, $y]
                 )->resize(
                     new Box($width, $height)
                 );
