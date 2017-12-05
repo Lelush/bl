@@ -9,11 +9,13 @@
 use yii\helpers\Html;
 use frontend\widgets\ThemeForm;
 use yii\helpers\Url;
+use common\models\UserInfo;
 
 $isOwner = $model->id == $userOwner->id;
 
 $this->title = $isOwner ? 'Моя страница' : 'Страница пользователя '.$model->fullName;
 $this->params['breadcrumbs'][] = $this->title;
+$fakeUserInfo = new UserInfo();
 ?>
 <div class="admin-panels col-md-12 col-lg-12 col-xs-12">
 
@@ -53,8 +55,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="row">
                         <?foreach ($model->friendUsers as $friendUser):?>
                             <div class="col-md-4 col-lg-4 col-xs-4 friend-list_item">
-                                    <img src="<?=Yii::getAlias('@static')?>/img/users/friend-1.png"/>
+                                <a href="<?= $friendUser->getViewUrl();?>">
+                                    <img src="<?= $friendUser->userInfo ? $friendUser->userInfo->avatarSrc : $fakeUserInfo->avatarSrc; ?>"/>
                                     <span class="name"><?= $friendUser->first_name; ?></span>
+                                </a>
                             </div>
                         <? endforeach; ?>
 
@@ -288,11 +292,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="col-md-6">
                                     <div class="people-items_item">
                                         <div class="col-md-2 item-avatar">
-                                            <img src="<?= $user->userInfo->getAvatarSrc();?>"/>
+                                            <a href="<?= $user->getViewUrl(); ?>">
+                                                <img src="<?= $user->userInfo->getAvatarSrc();?>"/>
+                                            </a>
                                         </div>
                                         <div class="col-md-10 item-info">
                                             <span class="col-md-12 name">
-                                                <?= $user->fullName;?>
+                                                <a href="<?= $user->getViewUrl(); ?>">
+                                                    <?= $user->fullName;?>
+                                                </a>
                                             </span>
                                             <? if($user->userInfo->state): ?>
                                             <span class="col-md-12 status">
