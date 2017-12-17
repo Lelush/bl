@@ -1389,6 +1389,7 @@ div.friends-search input {
     background: transparent;
     padding: 5px;
     color: white;
+    width: 100%;
 }
 
 div.friends-page .updates-tabs span {
@@ -1485,14 +1486,24 @@ div.settings-page .settings-menu .settings-menu_box {
     margin-bottom: 15px;
 }
 
-.friends-filter_block .option-primary input:checked + .checkbox,
-.list-box_settings .option-primary input:checked + .checkbox
+.friends-filter_block .option input:checked + .checkbox,
+.list-box_settings .option input:checked + .checkbox
 {
     border-color: white;
 }
 
 .friends-filter_block .option > input,
 .list-box_settings .option > input
+{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    opacity: 0;
+    left: 0;
+}
+
+.friends-filter_block .form-group  input[type="checkbox"],
+.list-box_settings .form-group  input[type="checkbox"]
 {
     position: absolute;
     height: inherit;
@@ -1595,8 +1606,8 @@ div.settings-page .settings-menu .settings-menu_box {
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
-.friends-filter_block .option-primary input:checked + .checkbox:before,
-.list-box_settings .option-primary input:checked + .checkbox:before {
+.friends-filter_block .option input:checked + .checkbox:before,
+.list-box_settings .option input:checked + .checkbox:before {
     content: "";
     border-color: white;
 }

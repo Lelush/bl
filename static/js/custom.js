@@ -8,6 +8,96 @@
 
 (function($) {
 
+    var buffForm;
+    function applyFilter(){
+        var form = $(this).parents('form');
+        var pjax = form.attr('data-pjax-target');
+        var url = window.location.origin + window.location.pathname;
+        var delimiter = '';
+        if(url.match(/(&|\?)[^&\?]+$/)){
+            delimiter = '&';
+        }else if(url.match(/(&|\?)$/)){
+            delimiter = '';
+        }else{
+            delimiter = '?';
+        }
+        url+=delimiter+form.serialize();
+        $.pjax.reload({
+            container:pjax,
+            url:url
+        });
+        return false;
+    }
+
+    var inputChangeTimeout;
+    function timeoutApplyFilter(){
+        var self = this;
+        clearTimeout(inputChangeTimeout);
+        inputChangeTimeout = setTimeout(function(){
+            $.proxy(applyFilter,self)();
+        },300);
+    }
+
+    $(document).on('click','.apply-pjax', function(){
+        var form = $(this).parents('form');
+        form.find('button').addClass('disabled');
+        buffForm = form;
+        $.proxy(applyFilter,this)();
+    });
+
+    $.fn.clearForm = function() {
+        return this.each(function() {
+            var type = this.type, tag = this.tagName.toLowerCase();
+            if (tag == 'form')
+                return $(':input',this).clearForm();
+            if (type == 'text' || type == 'password' || tag == 'textarea'){
+                this.value = typeof this.attributes['data-default'] != 'undefined' ? this.attributes['data-default'].value :'';
+            }
+            else if (type == 'checkbox' || type == 'radio')
+                this.checked = false;
+            else if (tag == 'select')
+                this.selectedIndex = 0;
+        });
+    };
+
+    $(document).on('click','.clear-pjax', function(){
+        var form = $(this).parents('form');
+        form.clearForm();
+        form.find('button').addClass('disabled');
+        buffForm = form;
+        $.proxy(applyFilter,this)();
+    });
+
+    $(document).on('change', '.change-pjax-delay', function(){
+        $.proxy(timeoutApplyFilter,this)();
+    });
+
+    $(document).on('change', '.change-pjax', function(){
+        $.proxy(applyFilter,this)();
+    });
+
+    $(document).on('keyup','[data-pjax-target] input, [data-pjax-target] textarea' ,function(e){
+        if(e.keyCode == 13){ //enter
+            $.proxy(applyFilter,this)();
+        }
+    });
+
+
+    //$('.offer-filter').find(':checkbox, :radio, select').on('change',function(){
+    //    $.proxy(applyFilter, this)();
+    //});
+    $(document).on("pjax:click", "a:not(.goto-page):not(table th a):not([data-pjax=0])", false);
+    $(document).on('pjax:beforeSend', function() {
+        $('#pjax-filtered-deposit-list-trobbler').css('display', 'block');
+    });
+    $(document).on('pjax:complete', function() {
+        $('.layer').click();
+        if(buffForm){
+            $(buffForm).find('button').removeClass('disabled');
+        }
+    });
+    $.pjax.defaults = $.pjax.defaults || {};
+    $.pjax.defaults.timeout = 2000;
 
     window.Profile = (function(){
             return {

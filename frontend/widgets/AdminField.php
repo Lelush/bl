@@ -127,7 +127,7 @@ class AdminField extends ActiveField
     public function checkbox($options = [], $enclosedByLabel = true)
     {
         $type = ArrayHelper::getValue($options, 'type');
-        $options['template'] = "<label class=\"option $type\">{input}<span class=\"checkbox\">\n{hint}\n</span>{label}</label>";
+        $options['template'] = "<label class=\"option $type\">{input}<span class=\"checkbox\">\n{hint}\n</span><span class=\"text\">{labelTitle}</span></label>";
         return parent::checkbox($options);
     }
 }

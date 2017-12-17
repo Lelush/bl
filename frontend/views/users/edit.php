@@ -215,7 +215,7 @@ JS
 
         <div class="col-md-12 col-lg-12 col-xs-12 mb30">
             <div class="form-group pull-right">
-                <?= Html::a('Отмена',['/my-page'], ['class' => 'btn btn-default']) ?>
+                <?= Html::a('Отмена',['/users/my-page'], ['class' => 'btn btn-default']) ?>
                 <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => 'btn edit-save']) ?>
             </div>
         </div>

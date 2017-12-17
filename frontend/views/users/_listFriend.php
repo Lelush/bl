@@ -11,7 +11,7 @@ use common\enums\UserCategory;
 
 <div class="col-md-12 col-lg-12 col-xs-12 friends-list_item" data-id="<?$model->id?>">
     <div class="col-md-5 col-xs-12 friend-info_main">
-        <img class="avatar" src="http://bl.2dsd.ru/new/assets/img/users/friend-1.png"/>
+        <img class="avatar" src="<?= $model->userInfo->avatarSrc;?>"/>
         <div class="info-main_text">
             <!--                    <span class="status">-->
             <!--                      Онлайн-->

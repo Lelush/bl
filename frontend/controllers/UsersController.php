@@ -238,6 +238,7 @@ class UsersController extends Controller
             'userOwner' => $userOwner,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'onlineCount' => 0,
         ]);
 
     }

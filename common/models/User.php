@@ -162,6 +162,16 @@ class User extends ActiveRecord implements IdentityInterface
             THEN friend_to = id
             END
         ',[':id' => $this->getId()]);
+        $tableName = self::tableName();
+        $query = self::find()->distinct()
+            ->innerJoin(Friends::tableName(), "
+            CASE
+            WHEN friend_to = :id
+            THEN friend_from = \"{$tableName}\".id
+            WHEN friend_from = :id
+            THEN friend_to = \"{$tableName}\".id
+            END
+            ", [":id"=>$this->getId()]);
         $query->multiple = true;
 
         return $query;

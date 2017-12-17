@@ -15,7 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
         <img src="<?=Yii::getAlias('@static')?>/img/1_step.png"/>
     </div>
 
-    <?php $form = \yii\bootstrap\ActiveForm::begin(['id' => 'login-form']); ?>
+    <?php $form = \yii\bootstrap\ActiveForm::begin([
+        'id' => 'login-form',
+        'enableAjaxValidation' => true
+    ]); ?>
     <?= $form->errorSummary($model)?>
         <div class="col-md-6 col-xs-12">
             <div id="reg_1" class="registration first">
