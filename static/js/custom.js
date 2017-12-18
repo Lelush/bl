@@ -96,8 +96,10 @@
             $(buffForm).find('button').removeClass('disabled');
         }
     });
-    $.pjax.defaults = $.pjax.defaults || {};
-    $.pjax.defaults.timeout = 2000;
+    if($.pjax) {
+        $.pjax.defaults = $.pjax.defaults || {};
+        $.pjax.defaults.timeout = 2000;
+    }
 
     window.Profile = (function(){
             return {
