@@ -315,7 +315,13 @@ class SiteController extends Controller
      */
     public function actionUsers()
     {
+        if(!Yii::$app->getUser()->identity) {
+            $this->redirect(['site/index']);
+        }
         $user = UserForm::findOne(Yii::$app->getUser()->identity->getId());
+        if($user->userInfo && in_array($user->userInfo->scope, UserCategory::getKeys())) {
+            $this->redirect(['/users/my-page']);
+        }
 
         if(Yii::$app->request->post() && $user){
             if(ArrayHelper::keyExists('Luxury',Yii::$app->request->post())){

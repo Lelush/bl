@@ -29,8 +29,8 @@
                         image.src = e.target.result;
 
                         image.onload = function() {
-                            var x1 = (this.width - width) / 2;
-                            var y1 = (this.height - height) / 2;
+                            var x1 = Math.round(((this.width - width) / 2) * 100) / 100; // round to 00.00
+                            var y1 = Math.round(((this.height - height) / 2) * 100) / 100;
                             var x2 = x1 + width;
                             var y2 = y1 + height;
                             var aspectRatio = (options.aspectRatio !== null && options.aspectRatio !== 'undefined') ? options.aspectRatio : width / height;

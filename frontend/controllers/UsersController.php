@@ -207,7 +207,7 @@ class UsersController extends Controller
             if ($model->save()) {
                 $this->setFlash('success', ACTION_CREATE_SUCCESS);
 
-                return $this->redirect(['my-page']);
+                return $this->redirect(['/users/my-page']);
             } else {
                 $this->setFlash('error', ACTION_VALIDATE_ERROR);
             }
