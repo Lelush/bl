@@ -77,7 +77,7 @@ $fakeUserInfo = new UserInfo();
                         <?= $model->fullName; ?>
                     </span>
                 <div class="myPage-views">
-                    120
+                    <?= $model->views ?>
                 </div>
                 <div class="myPage-info__info clearfix">
                     <div class="col-md-12 col-xs-12 mb10">
@@ -221,9 +221,11 @@ $fakeUserInfo = new UserInfo();
                                 </span>
                                 <div data-feed="people-tab" class="tab-button active">
                                     <img src="<?=Yii::getAlias('@static')?>/img/users/people-tab.svg"/>
+                                    <? if(false): /** @TODO ??? */?>
                                     <span>
                                       240
                                     </span>
+                                    <? endif; ?>
                                 </div>
                     </div>
 
@@ -233,9 +235,11 @@ $fakeUserInfo = new UserInfo();
                           </span>
                                 <div data-feed="activity-tab" class="tab-button">
                                     <img src="<?=Yii::getAlias('@static')?>/img/users/activity-tab.svg"/>
+                                    <? if(false): /** @TODO ??? */?>
                                     <span>
-                              8/10
-                            </span>
+                                      8/10
+                                    </span>
+                                    <? endif; ?>
                                 </div>
                             </div>
 
@@ -245,9 +249,11 @@ $fakeUserInfo = new UserInfo();
                           </span>
                                 <div data-feed="media-tab" class="tab-button">
                                     <img src="<?=Yii::getAlias('@static')?>/img/users/media-tab.svg"/>
+                                    <? if(false): /** @TODO ??? */?>
                                     <span>
-                              25
-                            </span>
+                                      25
+                                    </span>
+                                    <? endif; ?>
                                 </div>
                             </div>
 
@@ -257,9 +263,11 @@ $fakeUserInfo = new UserInfo();
                           </span>
                                 <div data-feed="places-tab" class="tab-button">
                                     <img src="<?=Yii::getAlias('@static')?>/img/users/places-tab.svg"/>
+                                    <? if(false): /** @TODO ??? */?>
                                     <span>
-                              150
-                            </span>
+                                      150
+                                    </span>
+                                    <? endif; ?>
                                 </div>
                             </div>
 

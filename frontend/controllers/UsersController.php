@@ -148,6 +148,9 @@ class UsersController extends Controller
     {
         $model = $this->findUser($id);
         $userOwner = Yii::$app->user->getIdentity();
+        if($userOwner->getId() != $model->getId()) {
+            $model->updateCounters(['views'=>1]);
+        }
         $users = $model
             ->getNotFriendUsers()
             ->limit(6)

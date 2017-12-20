@@ -37,6 +37,7 @@ use yii\web\IdentityInterface;
  * @property string $created_at
  * @property string $updated_at
  * @property string $fullName
+ * @property string $views
  *
  * @property Company $company
  * @property UserInfo $userInfo
@@ -100,7 +101,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'in', 'range' => UserStatus::getValues()],
             [['newPassword'], 'string', 'length' => [6, 25], 'message' => 'Пароль слишком простой, минимум 6 символов'],
             [['first_name', 'last_name'], 'string'],
-            [['status'], 'integer'],
+            [['status', 'views'], 'integer'],
         ];
     }
 
