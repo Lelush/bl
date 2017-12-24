@@ -71,6 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ])->label(false)?>
             <?= $form->field($model,'email')->textInput(['class'=>'form-control reg-input','placeholder'=>'Ваш E-Mail'])->label(false)?>
+            <?= $form->field($model,'password')->passwordInput(['class'=>'form-control reg-input','placeholder'=>'Ваш Пароль'])->label(false)?>
 
             <div class="reg-buttons">
                 <div class="col-md-4">

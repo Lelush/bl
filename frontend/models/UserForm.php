@@ -33,6 +33,7 @@ class UserForm extends User
     public $bd_day;
     public $bd_month;
     public $bd_year;
+    public $password;
 
     /**
      * @inheritdoc
@@ -43,9 +44,23 @@ class UserForm extends User
             [['bd_day', 'bd_month','bd_year'],'required', 'on'=>'signup', 'message'=>'Укажите {attribute}'],
             [['birthday'],'validateBirthday', 'on'=>'signup'],
             [['birthday'], 'date', 'format' => 'php:Y-m-d'],
-            [['first_name', 'last_name','email','phone'],'required'],
+            [['first_name', 'last_name'],'required'],
             [['id', 'status', 'parent'], 'integer'],
             [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'ref', 'role', 'last_visit', 'created_at', 'updated_at'], 'safe'],
+
+            ['phone', 'trim'],
+            ['phone', 'required'],
+            ['phone', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Такой номер уже зарегистрирован.', 'on'=>'signup'],
+
+            ['email', 'trim'],
+            ['email', 'required'],
+            ['email', 'email'],
+            ['email', 'string', 'max' => 255],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.', 'on'=>'signup'],
+
+
+            ['password', 'required', 'on'=>'signup'],
+            ['password', 'string', 'min' => 6, 'on'=>'signup'],
         ];
     }
 
@@ -159,7 +174,11 @@ class UserForm extends User
     {
         if ($insert) {
             $this->username = $this->email;
-            $this->newPassword = Yii::$app->security->generateRandomString(self::PASSWORD_LENGTH);
+            if($this->password) {
+                $this->newPassword = $this->password;
+            } else {
+                $this->newPassword = Yii::$app->security->generateRandomString(self::PASSWORD_LENGTH);
+            }
             $this->setPassword($this->newPassword);
             $this->generateAuthKey();
         }

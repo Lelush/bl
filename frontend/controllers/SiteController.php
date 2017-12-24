@@ -103,7 +103,7 @@ class SiteController extends Controller
                 if (!Yii::$app->user->isGuest) {
                     return $this->redirect(Yii::$app->request->referrer);
                 }
-                return Yii::$app->controller->goBack();
+                return $this->redirect(['/users/my-page']);
             }else{
                 return ActiveForm::validate($model);
             }
@@ -368,7 +368,7 @@ class SiteController extends Controller
                 if( $user->save() ) {
                     $this->redirect(['/users/my-page']);
                 } else {
-                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные');
+                    $this->setFlash('danger', 'Произошла ошибка, проверьте данные'.var_export($user->errors, true));
                 }
             }
 
